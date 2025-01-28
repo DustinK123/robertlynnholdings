@@ -3,14 +3,74 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Luxury Properties in Fox Cities | Robert Lynn Holdings</title>
-    <meta name="description" content="Explore premium commercial and residential properties in Fond du Lac and Fox Cities. Modern offices, luxury homes, and investment opportunities by Robert Lynn Holdings.">
+    <title>Commercial & Residential Properties | Fond du Lac Real Estate | Robert Lynn Holdings</title>
+    <meta name="description" content="Browse our portfolio of commercial and residential properties in Fond du Lac. From retail spaces to multi-family units, discover premium real estate opportunities.">
     <meta name="keywords" content="Fox Cities real estate, Fond du Lac properties, luxury homes, commercial real estate, property management, Wisconsin real estate">
     <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;600&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="../css/normalize.css">
     <link rel="stylesheet" href="../css/style.css">
     <link rel="stylesheet" href="../css/properties.css">
     <link rel="canonical" href="https://robertlynnholdings.com/pages/properties.html" />
+    
+    <!-- Properties Catalog Schema Markup -->
+    <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": "RealEstateAgency",
+      "name": "Robert Lynn Holdings",
+      "hasOfferCatalog": {
+        "@type": "OfferCatalog",
+        "name": "Available Properties",
+        "itemListElement": [
+          {
+            "@type": "Offer",
+            "itemOffered": {
+              "@type": "CommercialProperty",
+              "name": "Harbor View Plaza",
+              "floorSize": {
+                "@type": "QuantitativeValue",
+                "value": 33165,
+                "unitCode": "SQF"
+              }
+            }
+          },
+          {
+            "@type": "Offer",
+            "itemOffered": {
+              "@type": "Apartment",
+              "name": "52 E Cotton St Duplex",
+              "numberOfRooms": ["1 Bedroom Upper Unit", "2 Bedroom Lower Unit"]
+            }
+          },
+          {
+            "@type": "Offer",
+            "itemOffered": {
+              "@type": "Apartment",
+              "name": "33 W McWilliams St Duplex",
+              "numberOfRooms": ["2 Bedroom East Unit", "2 Bedroom West Unit"]
+            }
+          },
+          {
+            "@type": "Offer",
+            "itemOffered": {
+              "@type": "Apartment",
+              "name": "297 S Marr St & 69 Eighth St Duplex",
+              "numberOfRooms": ["2 Bedroom Marr Unit", "3 Bedroom Eighth Unit"]
+            }
+          },
+          {
+            "@type": "Offer",
+            "itemOffered": {
+              "@type": "SingleFamilyResidence",
+              "name": "236 E Johnson St",
+              "numberOfRooms": "3 Bedrooms"
+            }
+          }
+        ]
+      },
+      "areaServed": ["Fond du Lac", "Fox Cities", "Fox Valley", "Wisconsin"]
+    }
+    </script>
 </head>
 <body>
     <div class="nav-container">
