@@ -13,8 +13,29 @@
     align-items: center;
 }
 
+.logo {
+    text-decoration: none;
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+    z-index: 1001;
+}
+
+.logo-text {
+    font-family: 'Playfair Display', serif;
+    font-size: 1.4rem;
+    font-weight: 600;
+    color: #2C3E50;
+    letter-spacing: 0.5px;
+}
+
+.logo-text span {
+    color: #E67E22;
+}
+
 .logo img {
-    height: 60px;
+    height: 120px;
+    width: auto;
 }
 
 .nav-links {
@@ -70,17 +91,82 @@
     line-height: 1.4;
 }
 
+/* Hamburger Menu */
+.hamburger {
+    display: none;
+    flex-direction: column;
+    cursor: pointer;
+    padding: 0.5rem;
+    z-index: 1001;
+}
+
+.hamburger span {
+    width: 25px;
+    height: 3px;
+    background-color: #333;
+    margin: 3px 0;
+    transition: 0.3s ease;
+    border-radius: 2px;
+}
+
+.hamburger.active span:nth-child(1) {
+    transform: rotate(45deg) translate(5px, 6px);
+}
+
+.hamburger.active span:nth-child(2) {
+    opacity: 0;
+}
+
+.hamburger.active span:nth-child(3) {
+    transform: rotate(-45deg) translate(5px, -6px);
+}
+
 /* Responsive Design */
 @media (max-width: 768px) {
     .nav-container {
         padding: 1rem;
     }
-    
+
     .logo img {
-        height: 50px;
+        height: 80px;
     }
-    
+
+    .logo-text {
+        font-size: 1.1rem;
+    }
+
     .hero-text h2 {
         font-size: 1.8rem;
+    }
+
+    .hamburger {
+        display: flex;
+    }
+
+    .main-nav {
+        justify-content: space-between;
+    }
+
+    .nav-links {
+        display: none;
+        position: fixed;
+        top: 0;
+        left: 0;
+        right: 0;
+        bottom: 0;
+        background: white;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        gap: 2rem;
+        z-index: 1000;
+    }
+
+    .nav-links.active {
+        display: flex;
+    }
+
+    .nav-links a {
+        font-size: 1.5rem;
     }
 }

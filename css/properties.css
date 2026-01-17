@@ -1,24 +1,29 @@
 :root {
     /* Brand colors */
     --primary-color: #2C3E50;
+    --primary-dark: #1a252f;
     --secondary-color: #34495E;
     --accent-color: #E67E22;
     --text-color: #2C3E50;
     --background-light: #F5F6F7;
+    --navy: #1a2a3a;
 
     /* Common styles */
     --transition-timing: 0.3s ease;
+    --transition-standard: 0.3s ease;
     --border-radius-sm: 4px;
     --border-radius-lg: 8px;
+    --border-radius: 4px;
     --shadow-sm: 0 2px 4px rgba(0,0,0,0.1);
     --shadow-md: 0 4px 6px rgba(0,0,0,0.1);
-    
+
     /* Spacing */
     --space-xs: 0.5rem;
     --space-sm: 1rem;
     --space-md: 1.5rem;
     --space-lg: 2rem;
     --space-xl: 3rem;
+    --spacing-standard: 1rem;
 }
 
 .properties-container {
