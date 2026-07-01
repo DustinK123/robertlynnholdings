@@ -1,176 +1,527 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Services - Robert Lynn Holdings</title>
-    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;600&display=swap" rel="stylesheet">
-    <link rel="stylesheet" href="../css/normalize.css">
-    <link rel="stylesheet" href="../css/style.css">
-    <link rel="stylesheet" href="../css/services.css">
-    <link rel="canonical" href="https://robertlynnholdings.com/pages/services" />
-    
-    <!-- Services Schema Markup -->
-    <script type="application/ld+json">
-    {
-      "@context": "https://schema.org",
-      "@type": "RealEstateAgency",
-      "name": "Robert Lynn Holdings",
-      "makesOffer": [
-        {
-          "@type": "Service",
-          "name": "Commercial Property Management",
-          "areaServed": "Fox Cities"
-        },
-        {
-          "@type": "Service",
-          "name": "Residential Property Management",
-          "areaServed": "Fond du Lac"
-        },
-        {
-          "@type": "Service",
-          "name": "Real Estate Development",
-          "areaServed": "Wisconsin"
-        },
-        {
-          "@type": "Service",
-          "name": "Commercial Leasing",
-          "areaServed": "Fox Valley"
-        }
-      ],
-      "areaServed": ["Fond du Lac", "Fox Cities", "Fox Valley", "Wisconsin"],
-      "geo": {
-        "@type": "GeoCoordinates",
-        "latitude": "43.7844",
-        "longitude": "-88.4469"
-      }
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<title>Services | Commercial Leasing, Property Management &amp; Development | Robert Lynn Holdings</title>
+<meta name="description" content="Commercial leasing, property management, residential rentals, and development in Fond du Lac, Wisconsin — all handled in-house by a local owner and operator." />
+<meta name="keywords" content="Fond du Lac property management, commercial leasing Fond du Lac, residential rentals Wisconsin, real estate development Fox Cities, Harbor View Plaza, Robert Lynn Holdings" />
+<link rel="canonical" href="https://robertlynnholdings.com/pages/services" />
+<link rel="preconnect" href="https://fonts.googleapis.com" />
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+<link href="https://fonts.googleapis.com/css2?family=Spectral:wght@300;400;500;600;700&family=Hanken+Grotesk:wght@400;500;600;700&family=IBM+Plex+Mono:wght@400;500;600&display=swap" rel="stylesheet" />
+
+<!-- Services Schema Markup -->
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "RealEstateAgency",
+  "name": "Robert Lynn Holdings",
+  "url": "https://robertlynnholdings.com",
+  "makesOffer": [
+    { "@type": "Service", "name": "Commercial Leasing", "areaServed": "Fond du Lac" },
+    { "@type": "Service", "name": "Property Management", "areaServed": "Fox Cities" },
+    { "@type": "Service", "name": "Residential Rentals", "areaServed": "Fond du Lac" },
+    { "@type": "Service", "name": "Real Estate Development", "areaServed": "Wisconsin" }
+  ],
+  "areaServed": ["Fond du Lac", "Fox Cities", "Fox Valley", "Wisconsin"],
+  "geo": { "@type": "GeoCoordinates", "latitude": "43.7844", "longitude": "-88.4469" },
+  "telephone": "(920) 602-3455"
+}
+</script>
+<style>
+  :root{
+    --ink:#0C2229;
+    --deep:#103039;
+    --teal:#1F5A66;
+    --teal-soft:#2E7382;
+    --brass:#C2913E;
+    --brass-deep:#A6792E;
+    --paper:#F4F3EE;
+    --paper-2:#ECE9E0;
+    --mist:#DCE5E4;
+    --line:rgba(12,34,41,.14);
+    --line-light:rgba(244,243,238,.18);
+    --shadow:0 18px 48px -24px rgba(12,34,41,.45);
+
+    --serif:"Spectral",Georgia,serif;
+    --sans:"Hanken Grotesk",system-ui,-apple-system,sans-serif;
+    --mono:"IBM Plex Mono",ui-monospace,monospace;
+
+    --wrap:1180px;
+  }
+
+  *{box-sizing:border-box;margin:0;padding:0;}
+  html{scroll-behavior:smooth;}
+  body{
+    font-family:var(--sans);
+    color:var(--ink);
+    background:var(--paper);
+    line-height:1.6;
+    -webkit-font-smoothing:antialiased;
+  }
+  a{color:inherit;text-decoration:none;}
+  img{max-width:100%;display:block;}
+
+  .wrap{max-width:var(--wrap);margin:0 auto;padding:0 28px;}
+
+  /* ---------- eyebrow / waterline signature ---------- */
+  .eyebrow{
+    font-family:var(--mono);
+    font-size:.72rem;
+    letter-spacing:.22em;
+    text-transform:uppercase;
+    color:var(--brass-deep);
+    display:inline-flex;
+    align-items:center;
+    gap:.7em;
+  }
+  .eyebrow::before{
+    content:"";
+    width:26px;height:1px;
+    background:var(--brass);
+    display:inline-block;
+  }
+  .eyebrow.on-dark{color:var(--brass);}
+  .waterline{
+    height:1px;border:0;
+    background:linear-gradient(90deg,transparent,var(--line),transparent);
+    margin:0;
+  }
+
+  /* ---------- buttons ---------- */
+  .btn{
+    font-family:var(--sans);
+    font-weight:600;
+    font-size:.95rem;
+    padding:.85em 1.5em;
+    border-radius:2px;
+    display:inline-flex;align-items:center;gap:.55em;
+    transition:transform .18s ease, background .18s ease, color .18s ease, border-color .18s ease;
+    cursor:pointer;border:1px solid transparent;
+  }
+  .btn .arr{transition:transform .18s ease;}
+  .btn:hover .arr{transform:translateX(3px);}
+  .btn-primary{background:var(--brass);color:var(--ink);}
+  .btn-primary:hover{background:#d4a350;transform:translateY(-1px);}
+  .btn-ghost{background:transparent;border-color:var(--line-light);color:var(--paper);}
+  .btn-ghost:hover{border-color:var(--brass);color:var(--brass);}
+  .btn-line{background:transparent;border-color:var(--line);color:var(--ink);}
+  .btn-line:hover{border-color:var(--teal);color:var(--teal);transform:translateY(-1px);}
+
+  /* ---------- nav ---------- */
+  header.nav{
+    position:sticky;top:0;z-index:50;
+    background:var(--ink);
+    transition:background .3s ease, box-shadow .3s ease;
+  }
+  header.nav.scrolled{ background:var(--ink); box-shadow:0 6px 24px -12px rgba(0,0,0,.6); }
+  .nav-inner{
+    display:flex;align-items:center;justify-content:space-between;
+    padding:18px 28px;max-width:var(--wrap);margin:0 auto;
+  }
+  .brand{display:flex;align-items:center;gap:12px;color:var(--paper);}
+  .brand .logo-img{height:46px;width:auto;display:block;}
+  footer.site .brand .logo-img{height:54px;}
+  nav.links{display:flex;align-items:center;gap:30px;}
+  nav.links a{
+    color:var(--paper);font-size:.92rem;font-weight:500;opacity:.85;
+    transition:opacity .15s ease,color .15s ease;position:relative;
+  }
+  nav.links a:hover{opacity:1;color:var(--brass);}
+  nav.links a.current{opacity:1;color:var(--brass);}
+  .nav-cta{margin-left:6px;}
+  .menu-btn{display:none;background:none;border:0;color:var(--paper);cursor:pointer;font-size:1.3rem;}
+
+  /* ---------- page hero ---------- */
+  .hero{
+    background:
+      radial-gradient(1200px 500px at 78% -10%, rgba(31,90,102,.55), transparent 60%),
+      linear-gradient(180deg,#0C2229 0%, #0E2730 55%, #103039 100%);
+    color:var(--paper);
+    position:relative;overflow:hidden;
+  }
+  .hero::after{
+    content:"";position:absolute;left:0;right:0;bottom:0;height:1px;
+    background:linear-gradient(90deg,transparent,rgba(194,145,62,.6),transparent);
+  }
+  .hero-inner{
+    max-width:var(--wrap);margin:0 auto;padding:74px 28px 70px;
+    display:grid;grid-template-columns:1.05fr .95fr;gap:54px;align-items:center;
+  }
+  .hero h1{
+    font-family:var(--serif);font-weight:600;
+    font-size:clamp(2.6rem,5.4vw,4.4rem);
+    line-height:1.04;letter-spacing:-.01em;margin:.5rem 0 1.1rem;
+  }
+  .hero h1 em{font-style:italic;color:var(--brass);font-weight:500;}
+  .hero p.lead{ font-size:1.13rem;color:#D7E0DF;max-width:38ch;margin-bottom:1.9rem; }
+  .hero-cta{display:flex;gap:14px;flex-wrap:wrap;margin-bottom:2.4rem;}
+  .hero-stats{
+    display:flex;gap:30px;flex-wrap:wrap;
+    border-top:1px solid var(--line-light);padding-top:1.4rem;
+  }
+  .stat .num{font-family:var(--mono);font-size:1.5rem;font-weight:500;color:var(--paper);letter-spacing:-.02em;}
+  .stat .lab{font-family:var(--mono);font-size:.66rem;letter-spacing:.16em;text-transform:uppercase;color:var(--mist);opacity:.85;margin-top:.3rem;}
+
+  /* hero image card */
+  .hero-card{
+    border:1px solid var(--line-light);
+    background:linear-gradient(160deg,rgba(46,115,130,.30),rgba(12,34,41,.35));
+    border-radius:3px;overflow:hidden;box-shadow:var(--shadow);
+    position:relative;min-height:430px;display:flex;flex-direction:column;
+  }
+  .hero-photo{ flex:1;width:100%;object-fit:cover;display:block;min-height:330px; }
+  .hero-card .card-meta{
+    padding:16px 20px;display:flex;justify-content:space-between;align-items:center;
+    background:rgba(12,34,41,.5);border-top:1px solid var(--line-light);
+    font-family:var(--mono);font-size:.72rem;letter-spacing:.1em;text-transform:uppercase;color:#cfe0df;
+  }
+  .hero-card .card-meta b{color:var(--brass);font-weight:500;}
+
+  /* ---------- section base ---------- */
+  section{padding:84px 0;}
+  .sec-head{max-width:var(--wrap);margin:0 auto;padding:0 28px;}
+  .sec-title{
+    font-family:var(--serif);font-weight:600;
+    font-size:clamp(1.8rem,3.2vw,2.5rem);line-height:1.12;letter-spacing:-.01em;
+    margin:.7rem 0 0;max-width:18ch;
+  }
+
+  /* ---------- services overview grid ---------- */
+  .services{background:var(--paper);}
+  .svc-grid{
+    max-width:var(--wrap);margin:38px auto 0;padding:0 28px;
+    display:grid;grid-template-columns:repeat(4,1fr);gap:18px;
+  }
+  .svc-card{
+    background:#fff;border:1px solid var(--line);border-radius:3px;padding:26px 24px;
+    display:flex;flex-direction:column;min-height:230px;
+    transition:transform .2s ease, box-shadow .2s ease, border-color .2s ease;
+  }
+  .svc-card:hover{transform:translateY(-4px);box-shadow:var(--shadow);border-color:var(--brass);}
+  .svc-num{font-family:var(--mono);font-size:.72rem;color:var(--brass-deep);letter-spacing:.15em;}
+  .svc-card h3{font-family:var(--serif);font-size:1.28rem;font-weight:600;margin:14px 0 8px;}
+  .svc-card p{font-size:.95rem;color:#46555a;flex:1;}
+  .svc-card .more{font-family:var(--mono);font-size:.72rem;letter-spacing:.1em;text-transform:uppercase;color:var(--teal);margin-top:14px;}
+
+  /* ---------- service detail rows ---------- */
+  .detail{background:var(--paper);padding-top:20px;}
+  .detail-row{
+    max-width:var(--wrap);margin:0 auto;padding:64px 28px;
+    display:grid;grid-template-columns:.8fr 1.2fr;gap:54px;align-items:start;
+    border-top:1px solid var(--line);
+  }
+  .detail-row:first-child{border-top:0;}
+  .detail-row .d-num{font-family:var(--mono);font-size:.8rem;color:var(--brass-deep);letter-spacing:.15em;}
+  .detail-row h2{
+    font-family:var(--serif);font-weight:600;font-size:clamp(1.6rem,2.6vw,2.1rem);
+    line-height:1.14;margin:.6rem 0 0;max-width:14ch;
+  }
+  .detail-row .d-body p{font-size:1.08rem;color:#26424a;}
+  .detail-row ul{list-style:none;margin-top:1.3rem;display:grid;gap:.7rem;}
+  .detail-row li{position:relative;padding-left:1.5em;color:#2b464d;font-size:1rem;}
+  .detail-row li::before{content:"";position:absolute;left:0;top:.62em;width:9px;height:1px;background:var(--brass);}
+
+  /* ---------- cta band ---------- */
+  .cta-band{
+    background:
+      radial-gradient(900px 380px at 18% 120%, rgba(31,90,102,.5), transparent 60%),
+      linear-gradient(180deg,#103039,#0C2229);
+    color:var(--paper);text-align:center;
+  }
+  .cta-band .wrap{display:flex;flex-direction:column;align-items:center;gap:8px;}
+  .cta-band h2{font-family:var(--serif);font-size:clamp(1.9rem,3.4vw,2.7rem);font-weight:600;margin:.6rem 0 .3rem;}
+  .cta-band p{color:#cfdedc;max-width:46ch;margin-bottom:1.7rem;}
+  .cta-phone{font-family:var(--mono);font-size:.82rem;letter-spacing:.08em;color:var(--brass);margin-top:1.4rem;}
+
+  /* ---------- footer ---------- */
+  footer.site{background:var(--ink);color:#bcccca;padding:64px 0 30px;}
+  .foot-grid{
+    max-width:var(--wrap);margin:0 auto;padding:0 28px;
+    display:grid;grid-template-columns:1.4fr 1fr 1fr 1fr;gap:36px;
+  }
+  footer.site .brand{margin-bottom:14px;}
+  footer.site .ftxt{font-size:.92rem;max-width:30ch;color:#9fb2b0;}
+  .foot-col h5{font-family:var(--mono);font-size:.7rem;letter-spacing:.18em;text-transform:uppercase;color:var(--brass);margin-bottom:14px;}
+  .foot-col a, .foot-col p{display:block;font-size:.92rem;color:#bcccca;margin-bottom:9px;transition:color .15s ease;}
+  .foot-col a:hover{color:var(--brass);}
+  .foot-bottom{
+    max-width:var(--wrap);margin:42px auto 0;padding:20px 28px 0;
+    border-top:1px solid var(--line-light);
+    display:flex;justify-content:space-between;gap:18px;flex-wrap:wrap;
+    font-family:var(--mono);font-size:.7rem;letter-spacing:.06em;color:#7e9290;
+  }
+  .eho{display:flex;align-items:center;gap:8px;}
+  .eho svg{flex:none;}
+
+  /* ---------- reveal animation ---------- */
+  .reveal{opacity:0;transform:translateY(18px);transition:opacity .7s ease, transform .7s ease;}
+  .reveal.in{opacity:1;transform:none;}
+
+  /* ---------- responsive ---------- */
+  @media(max-width:980px){
+    .hero-inner{grid-template-columns:1fr;gap:38px;}
+    .hero-card{min-height:340px;}
+    .svc-grid{grid-template-columns:1fr 1fr;}
+    .detail-row{grid-template-columns:1fr;gap:20px;padding:48px 28px;}
+    .detail-row h2{max-width:none;}
+    .foot-grid{grid-template-columns:1fr 1fr;gap:28px;}
+  }
+  @media(max-width:620px){
+    nav.links{
+      position:absolute;top:100%;left:0;right:0;
+      flex-direction:column;align-items:stretch;gap:0;
+      background:var(--ink);border-top:1px solid var(--line-light);
+      padding:10px 0 16px;box-shadow:0 24px 40px -22px rgba(0,0,0,.75);
+      opacity:0;visibility:hidden;transform:translateY(-10px);
+      transition:opacity .22s ease, transform .22s ease, visibility .22s;
     }
-    </script>
+    nav.links.open{opacity:1;visibility:visible;transform:none;}
+    nav.links a{width:100%;padding:14px 28px;opacity:.9;font-size:1rem;}
+    nav.links a.current{opacity:1;}
+    .nav-cta{margin:12px 28px 0;justify-content:center;}
+    .menu-btn{display:block;}
+    .svc-grid{grid-template-columns:1fr;}
+    .foot-grid{grid-template-columns:1fr;}
+    section{padding:60px 0;}
+    .hero-inner{padding:54px 28px 56px;}
+  }
+  @media(prefers-reduced-motion:reduce){
+    *{scroll-behavior:auto;}
+    .reveal{transition:none;opacity:1;transform:none;}
+    .btn,.svc-card{transition:none;}
+  }
+</style>
 </head>
 <body>
-    <div class="nav-container">
-        <nav class="main-nav">
-            <a href="../index.html" class="logo">
-                <img src="../images/logo.png" alt="Robert Lynn Holdings">
-            </a>
-            <div class="nav-links">
-                <a href="about.html">About Us</a>
-                <a href="services.html">Services</a>
-                <a href="properties.html">Properties</a>
-                <a href="contact.html">Contact</a>
-            </div>
-            <button class="hamburger" aria-label="Toggle navigation menu" aria-expanded="false">
-                <span></span>
-                <span></span>
-                <span></span>
-            </button>
-        </nav>
+
+<!-- ============ NAV ============ -->
+<header class="nav" id="nav">
+  <div class="nav-inner">
+    <a class="brand" href="../index.html" aria-label="Robert Lynn Holdings home">
+      <img class="logo-img" src="../images/logo-light.png" alt="Robert Lynn Holdings" />
+    </a>
+    <nav class="links">
+      <a href="about.html">About</a>
+      <a href="services.html" class="current">Services</a>
+      <a href="properties.html">Properties</a>
+      <a href="contact.html">Contact</a>
+      <a class="btn btn-primary nav-cta" href="contact.html">Inquire <span class="arr">&rarr;</span></a>
+    </nav>
+    <button class="menu-btn" aria-label="Open menu">&#9776;</button>
+  </div>
+</header>
+
+<!-- ============ HERO ============ -->
+<section class="hero">
+  <div class="hero-inner">
+    <div class="hero-text">
+      <span class="eyebrow on-dark">What we do</span>
+      <h1>Real estate, <em>handled in-house.</em></h1>
+      <p class="lead">Commercial leasing, property management, residential rentals, and development — all under one local owner. When you work with us, you're working with the people who actually run the property.</p>
+      <div class="hero-cta">
+        <a class="btn btn-primary" href="properties.html">See available spaces <span class="arr">&rarr;</span></a>
+        <a class="btn btn-ghost" href="contact.html">Contact us</a>
+      </div>
+      <div class="hero-stats">
+        <div class="stat"><div class="num">33,165</div><div class="lab">SF retail &amp; office</div></div>
+        <div class="stat"><div class="num">7</div><div class="lab">Residential units</div></div>
+        <div class="stat"><div class="num">4</div><div class="lab">Core services</div></div>
+      </div>
     </div>
 
-    <main class="services-container">
-        <!-- Commercial Section -->
-        <section class="service-section">
-            <h2>Commercial Real Estate Solutions</h2>
-            <h3>Comprehensive Commercial Services for Fox Cities Businesses</h3>
-            
-            <div class="service-content">
-                <h4>Development and Planning</h4>
-                <p>Transform your vision into reality with our expert commercial development team. We specialize in both new development and redevelopment projects across the Fox Cities region. Our experienced professionals work closely with you to:</p>
-                <ul>
-                    <li>Navigate complex development challenges</li>
-                    <li>Create customized solutions aligned with your objectives</li>
-                    <li>Deliver comprehensive commercial development strategies</li>
-                    <li>Ensure project success from conception to completion</li>
-                </ul>
-            </div>
+    <div class="hero-card">
+      <img class="hero-photo" src="../images/harborview-plaza.jpg" alt="Harbor View Plaza, Fond du Lac, Wisconsin" />
+      <div class="card-meta"><span>Harbor View Plaza</span><span><b>Commercial &middot; Leasing</b></span></div>
+    </div>
+  </div>
+</section>
 
-            <div class="service-content">
-                <h4>Strategic Acquisitions</h4>
-                <p>Make informed investment decisions with our proven acquisitions expertise. Our team brings:</p>
-                <ul>
-                    <li>In-depth Fox Cities market knowledge</li>
-                    <li>Proven transaction execution experience</li>
-                    <li>Strategic investment guidance</li>
-                    <li>Comprehensive market analysis and valuation services</li>
-                </ul>
-            </div>
+<!-- ============ SERVICES OVERVIEW ============ -->
+<section class="services">
+  <div class="sec-head reveal">
+    <span class="eyebrow">Overview</span>
+    <h2 class="sec-title">Four ways we work with the community.</h2>
+  </div>
+  <div class="svc-grid">
+    <a class="svc-card reveal" href="#commercial-leasing">
+      <span class="svc-num">01</span>
+      <h3>Commercial Leasing</h3>
+      <p>Retail and office space in our own buildings, leased directly with clear, business-friendly terms.</p>
+      <span class="more">Details &darr;</span>
+    </a>
+    <a class="svc-card reveal" href="#property-management">
+      <span class="svc-num">02</span>
+      <h3>Property Management</h3>
+      <p>Proactive maintenance, responsive tenant relations, and careful upkeep of every space we hold.</p>
+      <span class="more">Details &darr;</span>
+    </a>
+    <a class="svc-card reveal" href="#residential-rentals">
+      <span class="svc-num">03</span>
+      <h3>Residential Rentals</h3>
+      <p>Single-family homes and duplexes across Fond du Lac, maintained by a local owner you can reach.</p>
+      <span class="more">Details &darr;</span>
+    </a>
+    <a class="svc-card reveal" href="#development">
+      <span class="svc-num">04</span>
+      <h3>Development</h3>
+      <p>Ground-up and redevelopment projects that add lasting value to the local commercial landscape.</p>
+      <span class="more">Details &darr;</span>
+    </a>
+  </div>
+</section>
 
-            <div class="service-content">
-                <h4>Professional Leasing Services</h4>
-                <p>Maximize your property's potential with our strategic leasing solutions. We offer:</p>
-                <ul>
-                    <li>Access to an extensive network of qualified tenants</li>
-                    <li>Expert market positioning and property marketing</li>
-                    <li>Professional lease negotiation and execution</li>
-                    <li>Long-term relationship building with quality tenants</li>
-                </ul>
-            </div>
+<hr class="waterline" />
 
-            <div class="service-content">
-                <h4>Comprehensive Property Management</h4>
-                <p>Focus on your business while we handle your property needs. Our full-service property management includes:</p>
-                <ul>
-                    <li>Proactive maintenance programs</li>
-                    <li>Professional tenant relations</li>
-                    <li>Financial reporting and analysis</li>
-                    <li>Value-add property improvements</li>
-                    <li>Risk management and asset protection</li>
-                </ul>
-            </div>
-        </section>
+<!-- ============ SERVICE DETAILS ============ -->
+<section class="detail">
+  <div class="detail-row reveal" id="commercial-leasing">
+    <div>
+      <div class="d-num">01 / Commercial</div>
+      <h2>Commercial Leasing</h2>
+    </div>
+    <div class="d-body">
+      <p>We lease retail and office space in the buildings we own — anchored by Harbor View Plaza on Winnebago Drive. Because we're the owner, terms are straightforward and decisions are fast. No listing agent in the middle, no waiting on a third party.</p>
+      <ul>
+        <li>Retail and office space leased directly by the owner</li>
+        <li>Clear, business-friendly lease terms and quick decisions</li>
+        <li>Prime corridor frontage in Fond du Lac</li>
+        <li>A landlord invested in keeping the property right long-term</li>
+      </ul>
+    </div>
+  </div>
 
-        <!-- Residential Section -->
-        <section class="service-section">
-            <h2>Residential Real Estate Excellence</h2>
-            <h3>Your Trusted Partner in Fox Cities Residential Real Estate</h3>
+  <div class="detail-row reveal" id="property-management">
+    <div>
+      <div class="d-num">02 / Management</div>
+      <h2>Property Management</h2>
+    </div>
+    <div class="d-body">
+      <p>We manage what we own, in-house. That means maintenance gets handled promptly, tenants reach a real person, and every space is cared for by people with a long-term stake in the property.</p>
+      <ul>
+        <li>Proactive, preventative maintenance programs</li>
+        <li>Responsive tenant relations — you reach the owner, not a call center</li>
+        <li>Careful upkeep and value-add improvements over time</li>
+        <li>Reliable stewardship of both commercial and residential assets</li>
+      </ul>
+    </div>
+  </div>
 
-            <div class="service-content">
-                <h4>Expert Home Buying and Selling</h4>
-                <p>Navigate the real estate market with confidence. Our experienced REALTORS® provide:</p>
-                <ul>
-                    <li>Personalized guidance for first-time homebuyers</li>
-                    <li>Expert property valuation and market analysis</li>
-                    <li>Skilled negotiation for optimal terms</li>
-                    <li>Complete transaction management</li>
-                    <li>Access to exclusive property listings</li>
-                </ul>
-            </div>
+  <div class="detail-row reveal" id="residential-rentals">
+    <div>
+      <div class="d-num">03 / Residential</div>
+      <h2>Residential Rentals</h2>
+    </div>
+    <div class="d-body">
+      <p>Our residential portfolio spans single-family homes and duplexes across Fond du Lac. Each is owned and maintained locally, so renters get a landlord who's actually reachable and genuinely invested in the home.</p>
+      <ul>
+        <li>Single-family homes and duplex units throughout the city</li>
+        <li>Locally owned and maintained — no distant management company</li>
+        <li>Straightforward 12-month leases</li>
+        <li>See current availability on our Properties page</li>
+      </ul>
+    </div>
+  </div>
 
-            <div class="service-content">
-                <h4>Custom Residential Development</h4>
-                <p>Creating exceptional living spaces throughout Fox Cities. Robert Lynn Holdings delivers:</p>
-                <ul>
-                    <li>Innovative home designs</li>
-                    <li>Modern community amenities</li>
-                    <li>Strategic location selection</li>
-                    <li>Sustainable development practices</li>
-                    <li>Connected neighborhood planning</li>
-                </ul>
-            </div>
-        </section>
+  <div class="detail-row reveal" id="development">
+    <div>
+      <div class="d-num">04 / Development</div>
+      <h2>Development</h2>
+    </div>
+    <div class="d-body">
+      <p>Beyond leasing and management, we take on ground-up and redevelopment projects that strengthen the local commercial landscape — building and improving property we intend to own and operate for the long haul.</p>
+      <ul>
+        <li>New development and redevelopment in the Fond du Lac area</li>
+        <li>Projects designed to add lasting community value</li>
+        <li>Owner-operated from concept through completion</li>
+        <li>A long-term commitment to the local market</li>
+      </ul>
+    </div>
+  </div>
+</section>
 
-        <!-- Footer -->
-        <footer>
-            <div class="footer-content">
-                <div class="footer-left">
-                    <h3>RLH Fond du Lac</h3>
-                    <p>N7913 Townline Rd</p>
-                    <p>Fond du Lac, WI 54937</p>
-                </div>
-                <div class="footer-right">
-                    <h3>Quick Links</h3>
-                    <ul>
-                        <li><a href="../index.html">Home</a></li>
-                        <li><a href="about.html">About Us</a></li>
-                        <li><a href="services.html">Services</a></li>
-                        <li><a href="properties.html">Properties</a></li>
-                        <li><a href="contact.html">Contact</a></li>
-                    </ul>
-                </div>
-            </div>
-        </footer>
-    </main>
+<!-- ============ CTA BAND ============ -->
+<section class="cta-band">
+  <div class="wrap">
+    <span class="eyebrow on-dark">Get in touch</span>
+    <h2>Tell us what you need.</h2>
+    <p>Looking for space, a rental, or a partner on a project? You'll reach the owner directly — no call center, no runaround.</p>
+    <a class="btn btn-primary" href="contact.html">Contact Robert Lynn Holdings <span class="arr">&rarr;</span></a>
+    <div class="cta-phone">(920) 602-3455 &nbsp;&middot;&nbsp; Fond du Lac, WI</div>
+  </div>
+</section>
 
-    <script src="../js/main.js"></script>
+<!-- ============ FOOTER ============ -->
+<footer class="site">
+  <div class="foot-grid">
+    <div>
+      <a class="brand" href="../index.html">
+        <img class="logo-img" src="../images/logo-light.png" alt="Robert Lynn Holdings" />
+      </a>
+      <p class="ftxt">A local owner and operator of commercial and residential real estate in Fond du Lac, Wisconsin.</p>
+    </div>
+    <div class="foot-col">
+      <h5>Explore</h5>
+      <a href="about.html">About Us</a>
+      <a href="services.html">Services</a>
+      <a href="properties.html">Properties</a>
+      <a href="contact.html">Contact</a>
+    </div>
+    <div class="foot-col">
+      <h5>Properties</h5>
+      <a href="harborview-plaza.html">Harbor View Plaza</a>
+      <a href="properties.html">Residential rentals</a>
+      <a href="properties.html">Available now</a>
+    </div>
+    <div class="foot-col">
+      <h5>Contact</h5>
+      <p>N7913 Townline Rd</p>
+      <p>Fond du Lac, WI 54937</p>
+      <a href="tel:9206023455">(920) 602-3455</a>
+    </div>
+  </div>
+  <div class="foot-bottom">
+    <span>&copy; 2026 Robert Lynn Holdings LLC. All rights reserved.</span>
+    <span class="eho">
+      <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="#7e9290" stroke-width="2" aria-hidden="true"><path d="M3 11l9-7 9 7"/><path d="M5 10v10h14V10"/><path d="M9 20v-6h6v6"/></svg>
+      Equal Housing Opportunity
+    </span>
+  </div>
+</footer>
+
+<script>
+  var nav = document.getElementById('nav');
+  function onScroll(){
+    if(window.scrollY > 24){ nav.classList.add('scrolled'); }
+    else{ nav.classList.remove('scrolled'); }
+  }
+  window.addEventListener('scroll', onScroll, {passive:true});
+  onScroll();
+
+  var io = new IntersectionObserver(function(entries){
+    entries.forEach(function(e){ if(e.isIntersecting){ e.target.classList.add('in'); io.unobserve(e.target); } });
+  }, {threshold:.12});
+  document.querySelectorAll('.reveal').forEach(function(el){ io.observe(el); });
+
+  // mobile menu toggle
+  var menuBtn = document.querySelector('.menu-btn');
+  var navLinks = document.querySelector('nav.links');
+  if(menuBtn && navLinks){
+    menuBtn.setAttribute('aria-expanded','false');
+    menuBtn.addEventListener('click', function(){
+      var open = navLinks.classList.toggle('open');
+      menuBtn.setAttribute('aria-expanded', open ? 'true' : 'false');
+      menuBtn.innerHTML = open ? '&times;' : '&#9776;';
+    });
+    navLinks.querySelectorAll('a').forEach(function(a){
+      a.addEventListener('click', function(){
+        navLinks.classList.remove('open');
+        menuBtn.setAttribute('aria-expanded','false');
+        menuBtn.innerHTML = '&#9776;';
+      });
+    });
+  }
+</script>
 </body>
-</html> 
+</html>

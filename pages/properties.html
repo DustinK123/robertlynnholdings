@@ -1,240 +1,517 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Commercial & Residential Properties | Fond du Lac Real Estate | Robert Lynn Holdings</title>
-    <meta name="description" content="Browse our portfolio of commercial and residential properties in Fond du Lac. From retail spaces to multi-family units, discover premium real estate opportunities.">
-    <meta name="keywords" content="Fox Cities real estate, Fond du Lac properties, luxury homes, commercial real estate, property management, Wisconsin real estate">
-    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;600&display=swap" rel="stylesheet">
-    <link rel="stylesheet" href="../css/normalize.css">
-    <link rel="stylesheet" href="../css/style.css">
-    <link rel="stylesheet" href="../css/properties.css">
-    <link rel="canonical" href="https://robertlynnholdings.com/pages/properties" />
-    
-    <!-- Properties Catalog Schema Markup -->
-    <script type="application/ld+json">
-    {
-      "@context": "https://schema.org",
-      "@type": "RealEstateAgency",
-      "name": "Robert Lynn Holdings",
-      "hasOfferCatalog": {
-        "@type": "OfferCatalog",
-        "name": "Available Properties",
-        "itemListElement": [
-          {
-            "@type": "Offer",
-            "itemOffered": {
-              "@type": "CommercialProperty",
-              "name": "Harbor View Plaza",
-              "floorSize": {
-                "@type": "QuantitativeValue",
-                "value": 33165,
-                "unitCode": "SQF"
-              }
-            }
-          },
-          {
-            "@type": "Offer",
-            "itemOffered": {
-              "@type": "Apartment",
-              "name": "52 E Cotton St Duplex",
-              "numberOfRooms": ["1 Bedroom Upper Unit", "2 Bedroom Lower Unit"]
-            }
-          },
-          {
-            "@type": "Offer",
-            "itemOffered": {
-              "@type": "Apartment",
-              "name": "33 W McWilliams St Duplex",
-              "numberOfRooms": ["2 Bedroom East Unit", "2 Bedroom West Unit"]
-            }
-          },
-          {
-            "@type": "Offer",
-            "itemOffered": {
-              "@type": "Apartment",
-              "name": "297 S Marr St & 69 Eighth St Duplex",
-              "numberOfRooms": ["2 Bedroom Marr Unit", "3 Bedroom Eighth Unit"]
-            }
-          },
-          {
-            "@type": "Offer",
-            "itemOffered": {
-              "@type": "SingleFamilyResidence",
-              "name": "236 E Johnson St",
-              "numberOfRooms": "3 Bedrooms"
-            }
-          }
-        ]
-      },
-      "areaServed": ["Fond du Lac", "Fox Cities", "Fox Valley", "Wisconsin"]
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<title>Properties | Commercial &amp; Residential Real Estate in Fond du Lac | Robert Lynn Holdings</title>
+<meta name="description" content="Browse commercial and residential properties owned by Robert Lynn Holdings in Fond du Lac, Wisconsin — from Harbor View Plaza retail and office space to single-family and duplex rentals." />
+<meta name="keywords" content="Fond du Lac properties, commercial real estate Fond du Lac, duplex rentals Fond du Lac, single family rental Wisconsin, Harbor View Plaza, Robert Lynn Holdings" />
+<link rel="canonical" href="https://robertlynnholdings.com/pages/properties" />
+<link rel="preconnect" href="https://fonts.googleapis.com" />
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+<link href="https://fonts.googleapis.com/css2?family=Spectral:wght@300;400;500;600;700&family=Hanken+Grotesk:wght@400;500;600;700&family=IBM+Plex+Mono:wght@400;500;600&display=swap" rel="stylesheet" />
+
+<!-- Properties Catalog Schema Markup -->
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "RealEstateAgency",
+  "name": "Robert Lynn Holdings",
+  "url": "https://robertlynnholdings.com",
+  "hasOfferCatalog": {
+    "@type": "OfferCatalog",
+    "name": "Available Properties",
+    "itemListElement": [
+      { "@type": "Offer", "itemOffered": { "@type": "CommercialProperty", "name": "Harbor View Plaza", "floorSize": { "@type": "QuantitativeValue", "value": 33165, "unitCode": "SQF" } } },
+      { "@type": "Offer", "itemOffered": { "@type": "Apartment", "name": "52 E Cotton St Duplex", "numberOfRooms": ["1 Bedroom Upper Unit", "2 Bedroom Lower Unit"] } },
+      { "@type": "Offer", "itemOffered": { "@type": "Apartment", "name": "33 W McWilliams St Duplex", "numberOfRooms": ["2 Bedroom East Unit", "2 Bedroom West Unit"] } },
+      { "@type": "Offer", "itemOffered": { "@type": "Apartment", "name": "297 S Marr St & 69 Eighth St Duplex", "numberOfRooms": ["2 Bedroom Marr Unit", "3 Bedroom Eighth Unit"] } },
+      { "@type": "Offer", "itemOffered": { "@type": "SingleFamilyResidence", "name": "236 E Johnson St", "numberOfRooms": "3 Bedrooms" } }
+    ]
+  },
+  "areaServed": ["Fond du Lac", "Fox Cities", "Fox Valley", "Wisconsin"]
+}
+</script>
+<style>
+  :root{
+    --ink:#0C2229;
+    --deep:#103039;
+    --teal:#1F5A66;
+    --teal-soft:#2E7382;
+    --brass:#C2913E;
+    --brass-deep:#A6792E;
+    --paper:#F4F3EE;
+    --paper-2:#ECE9E0;
+    --mist:#DCE5E4;
+    --line:rgba(12,34,41,.14);
+    --line-light:rgba(244,243,238,.18);
+    --shadow:0 18px 48px -24px rgba(12,34,41,.45);
+
+    --serif:"Spectral",Georgia,serif;
+    --sans:"Hanken Grotesk",system-ui,-apple-system,sans-serif;
+    --mono:"IBM Plex Mono",ui-monospace,monospace;
+
+    --wrap:1180px;
+  }
+
+  *{box-sizing:border-box;margin:0;padding:0;}
+  html{scroll-behavior:smooth;}
+  body{
+    font-family:var(--sans);
+    color:var(--ink);
+    background:var(--paper);
+    line-height:1.6;
+    -webkit-font-smoothing:antialiased;
+  }
+  a{color:inherit;text-decoration:none;}
+  img{max-width:100%;display:block;}
+
+  .wrap{max-width:var(--wrap);margin:0 auto;padding:0 28px;}
+
+  /* ---------- eyebrow / waterline ---------- */
+  .eyebrow{
+    font-family:var(--mono);font-size:.72rem;letter-spacing:.22em;text-transform:uppercase;
+    color:var(--brass-deep);display:inline-flex;align-items:center;gap:.7em;
+  }
+  .eyebrow::before{content:"";width:26px;height:1px;background:var(--brass);display:inline-block;}
+  .eyebrow.on-dark{color:var(--brass);}
+  .waterline{height:1px;border:0;background:linear-gradient(90deg,transparent,var(--line),transparent);margin:0;}
+
+  /* ---------- buttons ---------- */
+  .btn{
+    font-family:var(--sans);font-weight:600;font-size:.95rem;padding:.85em 1.5em;border-radius:2px;
+    display:inline-flex;align-items:center;gap:.55em;
+    transition:transform .18s ease, background .18s ease, color .18s ease, border-color .18s ease;
+    cursor:pointer;border:1px solid transparent;
+  }
+  .btn .arr{transition:transform .18s ease;}
+  .btn:hover .arr{transform:translateX(3px);}
+  .btn-primary{background:var(--brass);color:var(--ink);}
+  .btn-primary:hover{background:#d4a350;transform:translateY(-1px);}
+  .btn-ghost{background:transparent;border-color:var(--line-light);color:var(--paper);}
+  .btn-ghost:hover{border-color:var(--brass);color:var(--brass);}
+  .btn-line{background:transparent;border-color:var(--line);color:var(--ink);}
+  .btn-line:hover{border-color:var(--teal);color:var(--teal);transform:translateY(-1px);}
+  .btn-sm{font-size:.85rem;padding:.7em 1.15em;}
+  .btn-disabled{background:transparent;border-color:var(--line);color:#8a999c;cursor:not-allowed;pointer-events:none;}
+
+  /* ---------- nav ---------- */
+  header.nav{position:sticky;top:0;z-index:50;background:var(--ink);transition:background .3s ease, box-shadow .3s ease;}
+  header.nav.scrolled{background:var(--ink);box-shadow:0 6px 24px -12px rgba(0,0,0,.6);}
+  .nav-inner{display:flex;align-items:center;justify-content:space-between;padding:18px 28px;max-width:var(--wrap);margin:0 auto;}
+  .brand{display:flex;align-items:center;gap:12px;color:var(--paper);}
+  .brand .logo-img{height:46px;width:auto;display:block;}
+  footer.site .brand .logo-img{height:54px;}
+  nav.links{display:flex;align-items:center;gap:30px;}
+  nav.links a{color:var(--paper);font-size:.92rem;font-weight:500;opacity:.85;transition:opacity .15s ease,color .15s ease;position:relative;}
+  nav.links a:hover{opacity:1;color:var(--brass);}
+  nav.links a.current{opacity:1;color:var(--brass);}
+  .nav-cta{margin-left:6px;}
+  .menu-btn{display:none;background:none;border:0;color:var(--paper);cursor:pointer;font-size:1.3rem;}
+
+  /* ---------- page hero ---------- */
+  .hero{
+    background:
+      radial-gradient(1200px 500px at 78% -10%, rgba(31,90,102,.55), transparent 60%),
+      linear-gradient(180deg,#0C2229 0%, #0E2730 55%, #103039 100%);
+    color:var(--paper);position:relative;overflow:hidden;
+  }
+  .hero::after{content:"";position:absolute;left:0;right:0;bottom:0;height:1px;background:linear-gradient(90deg,transparent,rgba(194,145,62,.6),transparent);}
+  .hero-inner{max-width:var(--wrap);margin:0 auto;padding:74px 28px 70px;display:grid;grid-template-columns:1.05fr .95fr;gap:54px;align-items:center;}
+  .hero h1{font-family:var(--serif);font-weight:600;font-size:clamp(2.6rem,5.4vw,4.4rem);line-height:1.04;letter-spacing:-.01em;margin:.5rem 0 1.1rem;}
+  .hero h1 em{font-style:italic;color:var(--brass);font-weight:500;}
+  .hero p.lead{font-size:1.13rem;color:#D7E0DF;max-width:38ch;margin-bottom:1.9rem;}
+  .hero-cta{display:flex;gap:14px;flex-wrap:wrap;margin-bottom:2.4rem;}
+  .hero-stats{display:flex;gap:30px;flex-wrap:wrap;border-top:1px solid var(--line-light);padding-top:1.4rem;}
+  .stat .num{font-family:var(--mono);font-size:1.5rem;font-weight:500;color:var(--paper);letter-spacing:-.02em;}
+  .stat .lab{font-family:var(--mono);font-size:.66rem;letter-spacing:.16em;text-transform:uppercase;color:var(--mist);opacity:.85;margin-top:.3rem;}
+  .hero-card{border:1px solid var(--line-light);background:linear-gradient(160deg,rgba(46,115,130,.30),rgba(12,34,41,.35));border-radius:3px;overflow:hidden;box-shadow:var(--shadow);position:relative;min-height:430px;display:flex;flex-direction:column;}
+  .hero-photo{flex:1;width:100%;object-fit:cover;display:block;min-height:330px;}
+  .hero-card .card-meta{padding:16px 20px;display:flex;justify-content:space-between;align-items:center;background:rgba(12,34,41,.5);border-top:1px solid var(--line-light);font-family:var(--mono);font-size:.72rem;letter-spacing:.1em;text-transform:uppercase;color:#cfe0df;}
+  .hero-card .card-meta b{color:var(--brass);font-weight:500;}
+
+  /* ---------- section base ---------- */
+  section{padding:84px 0;}
+  .sec-head{max-width:var(--wrap);margin:0 auto;padding:0 28px;}
+  .sec-title{font-family:var(--serif);font-weight:600;font-size:clamp(1.8rem,3.2vw,2.5rem);line-height:1.12;letter-spacing:-.01em;margin:.7rem 0 0;max-width:18ch;}
+
+  /* ---------- filter bar ---------- */
+  .filter-bar{max-width:var(--wrap);margin:28px auto 0;padding:0 28px;display:flex;gap:12px;flex-wrap:wrap;}
+  .filter-btn{
+    font-family:var(--mono);font-size:.72rem;letter-spacing:.14em;text-transform:uppercase;
+    background:transparent;border:1px solid var(--line);color:var(--teal);
+    padding:.7em 1.2em;border-radius:2px;cursor:pointer;transition:all .18s ease;
+  }
+  .filter-btn:hover{border-color:var(--teal);}
+  .filter-btn.active{background:var(--ink);border-color:var(--ink);color:var(--paper);}
+
+  /* ---------- featured (commercial) ---------- */
+  .portfolio{background:var(--paper);}
+  .feat-grid{
+    max-width:var(--wrap);margin:22px auto 0;padding:0 28px;
+  }
+  .feat-inner{
+    display:grid;grid-template-columns:1.15fr .85fr;gap:0;
+    border:1px solid var(--line);border-radius:3px;overflow:hidden;background:#fff;
+  }
+  .feat-photo{min-height:360px;position:relative;overflow:hidden;background:linear-gradient(150deg,#236270,#0e2a33);}
+  .feat-photo img{position:absolute;inset:0;width:100%;height:100%;object-fit:cover;}
+  .feat-badge{
+    position:absolute;top:18px;left:18px;z-index:2;font-family:var(--mono);font-size:.66rem;letter-spacing:.18em;
+    text-transform:uppercase;background:var(--brass);color:var(--ink);padding:.4em .8em;border-radius:2px;font-weight:600;
+  }
+  .feat-body{padding:38px 36px;display:flex;flex-direction:column;}
+  .feat-body h3{font-family:var(--serif);font-size:1.85rem;font-weight:600;margin-bottom:.2rem;}
+  .feat-addr{font-family:var(--mono);font-size:.8rem;letter-spacing:.05em;color:var(--teal);margin-bottom:1.4rem;}
+  .fact-row{display:flex;justify-content:space-between;gap:18px;font-family:var(--mono);font-size:.82rem;padding:.85rem 0;border-bottom:1px solid var(--line);}
+  .fact-row span:first-child{color:var(--teal);letter-spacing:.06em;text-transform:uppercase;font-size:.7rem;}
+  .fact-row span:last-child{color:var(--ink);font-weight:500;text-align:right;}
+  .feat-body .btn{align-self:flex-start;margin-top:1.5rem;}
+
+  /* ---------- residential grid ---------- */
+  .res-head{max-width:var(--wrap);margin:0 auto;padding:70px 28px 0;}
+  .prop-grid{
+    max-width:var(--wrap);margin:26px auto 0;padding:0 28px;
+    display:grid;grid-template-columns:repeat(2,1fr);gap:22px;
+  }
+  .prop-card{
+    background:#fff;border:1px solid var(--line);border-radius:3px;overflow:hidden;
+    display:flex;flex-direction:column;transition:transform .2s ease, box-shadow .2s ease, border-color .2s ease;
+  }
+  .prop-card:hover{transform:translateY(-4px);box-shadow:var(--shadow);border-color:var(--brass);}
+  .prop-photo{position:relative;height:210px;overflow:hidden;background:linear-gradient(150deg,#cdd9d6,#aebfbb);}
+  .prop-photo img{position:absolute;inset:0;width:100%;height:100%;object-fit:cover;}
+  .prop-tag{
+    position:absolute;top:14px;left:14px;z-index:2;font-family:var(--mono);font-size:.62rem;letter-spacing:.16em;
+    text-transform:uppercase;padding:.35em .7em;border-radius:2px;font-weight:600;color:#fff;background:rgba(12,34,41,.7);
+  }
+  .prop-status{
+    position:absolute;top:14px;right:14px;z-index:2;font-family:var(--mono);font-size:.6rem;letter-spacing:.14em;
+    text-transform:uppercase;padding:.35em .7em;border-radius:2px;font-weight:600;
+  }
+  .status-available{background:#2f7d4f;color:#fff;}
+  .status-leased{background:rgba(12,34,41,.55);color:#dfe7e5;}
+  .prop-body{padding:22px 24px;display:flex;flex-direction:column;flex:1;}
+  .prop-body h3{font-family:var(--serif);font-size:1.35rem;font-weight:600;margin-bottom:.1rem;}
+  .prop-loc{font-family:var(--mono);font-size:.72rem;letter-spacing:.05em;color:var(--teal);text-transform:uppercase;margin-bottom:1rem;}
+  .prop-unit{font-size:.94rem;color:#3a4a4f;padding:.55rem 0;border-top:1px solid var(--line);}
+  .prop-unit b{color:var(--ink);font-weight:600;}
+  .prop-body .btn{margin-top:auto;align-self:flex-start;}
+  .prop-actions{margin-top:1.3rem;}
+
+  .is-hidden{display:none !important;}
+
+  /* ---------- cta band ---------- */
+  .cta-band{
+    background:radial-gradient(900px 380px at 18% 120%, rgba(31,90,102,.5), transparent 60%),linear-gradient(180deg,#103039,#0C2229);
+    color:var(--paper);text-align:center;
+  }
+  .cta-band .wrap{display:flex;flex-direction:column;align-items:center;gap:8px;}
+  .cta-band h2{font-family:var(--serif);font-size:clamp(1.9rem,3.4vw,2.7rem);font-weight:600;margin:.6rem 0 .3rem;}
+  .cta-band p{color:#cfdedc;max-width:46ch;margin-bottom:1.7rem;}
+  .cta-phone{font-family:var(--mono);font-size:.82rem;letter-spacing:.08em;color:var(--brass);margin-top:1.4rem;}
+
+  /* ---------- footer ---------- */
+  footer.site{background:var(--ink);color:#bcccca;padding:64px 0 30px;}
+  .foot-grid{max-width:var(--wrap);margin:0 auto;padding:0 28px;display:grid;grid-template-columns:1.4fr 1fr 1fr 1fr;gap:36px;}
+  footer.site .brand{margin-bottom:14px;}
+  footer.site .ftxt{font-size:.92rem;max-width:30ch;color:#9fb2b0;}
+  .foot-col h5{font-family:var(--mono);font-size:.7rem;letter-spacing:.18em;text-transform:uppercase;color:var(--brass);margin-bottom:14px;}
+  .foot-col a, .foot-col p{display:block;font-size:.92rem;color:#bcccca;margin-bottom:9px;transition:color .15s ease;}
+  .foot-col a:hover{color:var(--brass);}
+  .foot-bottom{max-width:var(--wrap);margin:42px auto 0;padding:20px 28px 0;border-top:1px solid var(--line-light);display:flex;justify-content:space-between;gap:18px;flex-wrap:wrap;font-family:var(--mono);font-size:.7rem;letter-spacing:.06em;color:#7e9290;}
+  .eho{display:flex;align-items:center;gap:8px;}
+  .eho svg{flex:none;}
+
+  /* ---------- reveal ---------- */
+  .reveal{opacity:0;transform:translateY(18px);transition:opacity .7s ease, transform .7s ease;}
+  .reveal.in{opacity:1;transform:none;}
+
+  /* ---------- responsive ---------- */
+  @media(max-width:980px){
+    .hero-inner{grid-template-columns:1fr;gap:38px;}
+    .hero-card{min-height:340px;}
+    .feat-inner{grid-template-columns:1fr;}
+    .prop-grid{grid-template-columns:1fr;}
+    .foot-grid{grid-template-columns:1fr 1fr;gap:28px;}
+  }
+  @media(max-width:620px){
+    nav.links{
+      position:absolute;top:100%;left:0;right:0;
+      flex-direction:column;align-items:stretch;gap:0;
+      background:var(--ink);border-top:1px solid var(--line-light);
+      padding:10px 0 16px;box-shadow:0 24px 40px -22px rgba(0,0,0,.75);
+      opacity:0;visibility:hidden;transform:translateY(-10px);
+      transition:opacity .22s ease, transform .22s ease, visibility .22s;
     }
-    </script>
+    nav.links.open{opacity:1;visibility:visible;transform:none;}
+    nav.links a{width:100%;padding:14px 28px;opacity:.9;font-size:1rem;}
+    nav.links a.current{opacity:1;}
+    .nav-cta{margin:12px 28px 0;justify-content:center;}
+    .menu-btn{display:block;}
+    .foot-grid{grid-template-columns:1fr;}
+    section{padding:60px 0;}
+    .hero-inner{padding:54px 28px 56px;}
+  }
+  @media(prefers-reduced-motion:reduce){
+    *{scroll-behavior:auto;}
+    .reveal{transition:none;opacity:1;transform:none;}
+    .btn,.prop-card{transition:none;}
+  }
+</style>
 </head>
 <body>
-    <div class="nav-container">
-        <nav class="main-nav">
-            <a href="../index.html" class="logo">
-                <img src="../images/logo.png" alt="Robert Lynn Holdings">
-            </a>
-            <div class="nav-links">
-                <a href="about.html">About Us</a>
-                <a href="services.html">Services</a>
-                <a href="properties.html">Properties</a>
-                <a href="contact.html">Contact</a>
-            </div>
-            <button class="hamburger" aria-label="Toggle navigation menu" aria-expanded="false">
-                <span></span>
-                <span></span>
-                <span></span>
-            </button>
-        </nav>
+
+<!-- ============ NAV ============ -->
+<header class="nav" id="nav">
+  <div class="nav-inner">
+    <a class="brand" href="../index.html" aria-label="Robert Lynn Holdings home">
+      <img class="logo-img" src="../images/logo-light.png" alt="Robert Lynn Holdings" />
+    </a>
+    <nav class="links">
+      <a href="about.html">About</a>
+      <a href="services.html">Services</a>
+      <a href="properties.html" class="current">Properties</a>
+      <a href="contact.html">Contact</a>
+      <a class="btn btn-primary nav-cta" href="contact.html">Inquire <span class="arr">&rarr;</span></a>
+    </nav>
+    <button class="menu-btn" aria-label="Open menu">&#9776;</button>
+  </div>
+</header>
+
+<!-- ============ HERO ============ -->
+<section class="hero">
+  <div class="hero-inner">
+    <div class="hero-text">
+      <span class="eyebrow on-dark">Our portfolio</span>
+      <h1>Property we <em>own and operate.</em></h1>
+      <p class="lead">Every listing here is a building we hold ourselves — commercial space at Harbor View Plaza and residential rentals across Fond du Lac. Lease directly from the owner.</p>
+      <div class="hero-cta">
+        <a class="btn btn-primary" href="#residential">Residential rentals <span class="arr">&rarr;</span></a>
+        <a class="btn btn-ghost" href="harborview-plaza.html">Harbor View Plaza</a>
+      </div>
+      <div class="hero-stats">
+        <div class="stat"><div class="num">33,165</div><div class="lab">SF retail &amp; office</div></div>
+        <div class="stat"><div class="num">7</div><div class="lab">Residential units</div></div>
+        <div class="stat"><div class="num">100%</div><div class="lab">Locally owned</div></div>
+      </div>
+    </div>
+    <div class="hero-card">
+      <img class="hero-photo" src="../images/premium-properties.jpg" alt="Properties owned by Robert Lynn Holdings in Fond du Lac" />
+      <div class="card-meta"><span>Fond du Lac, WI</span><span><b>Commercial &amp; Residential</b></span></div>
+    </div>
+  </div>
+</section>
+
+<!-- ============ PORTFOLIO ============ -->
+<section class="portfolio">
+  <div class="sec-head reveal">
+    <span class="eyebrow">Browse</span>
+    <h2 class="sec-title">Commercial &amp; residential listings.</h2>
+  </div>
+
+  <div class="filter-bar reveal">
+    <button class="filter-btn active" data-filter="all">All</button>
+    <button class="filter-btn" data-filter="commercial">Commercial</button>
+    <button class="filter-btn" data-filter="residential">Residential</button>
+  </div>
+
+  <!-- Featured commercial -->
+  <div class="feat-grid reveal" data-type="commercial">
+    <div class="feat-inner">
+      <div class="feat-photo">
+        <img src="../images/harborview-plaza.jpg" alt="Harbor View Plaza retail and office space in Fond du Lac" />
+        <span class="feat-badge">Commercial &middot; Leasing</span>
+      </div>
+      <div class="feat-body">
+        <h3>Harbor View Plaza</h3>
+        <div class="feat-addr">311&ndash;335 Winnebago Dr, Fond du Lac, WI 54935</div>
+        <div class="fact-row"><span>Total size</span><span>33,165 SF</span></div>
+        <div class="fact-row"><span>Use</span><span>Retail &amp; office</span></div>
+        <div class="fact-row"><span>Configuration</span><span>Multi-tenant strip center</span></div>
+        <div class="fact-row"><span>Position</span><span>Prime corridor frontage</span></div>
+        <a class="btn btn-line" href="harborview-plaza.html">Property details <span class="arr">&rarr;</span></a>
+      </div>
+    </div>
+  </div>
+
+  <!-- Residential heading -->
+  <div class="res-head reveal" id="residential" data-type="residential">
+    <span class="eyebrow">Residential</span>
+    <h2 class="sec-title">Homes &amp; duplexes for rent.</h2>
+  </div>
+
+  <!-- Residential grid -->
+  <div class="prop-grid">
+    <!-- Cotton St -->
+    <div class="prop-card reveal" data-type="residential">
+      <div class="prop-photo">
+        <img src="../images/cotton-st.jpg" alt="52 E Cotton St duplex in Fond du Lac" />
+        <span class="prop-tag">Duplex</span>
+        <span class="prop-status status-available">Available</span>
+      </div>
+      <div class="prop-body">
+        <h3>52 E Cotton St</h3>
+        <div class="prop-loc">Fond du Lac, WI 54935</div>
+        <div class="prop-unit"><b>Upper unit</b> &middot; 1 bed, 1 bath &middot; $1,000/mo &middot; 12-mo lease</div>
+        <div class="prop-unit"><b>Lower unit</b> &middot; 2 bed, 1 bath &middot; $1,300/mo &middot; 12-mo lease</div>
+        <div class="prop-actions">
+          <a class="btn btn-primary btn-sm" href="mailto:becky@acaciarealty.net?subject=Schedule%20Viewing%20-%2052%20E%20Cotton%20St">Schedule viewing <span class="arr">&rarr;</span></a>
+        </div>
+      </div>
     </div>
 
-    <main class="properties-container">
-        <!-- Hero Section -->
-        <section class="hero-section">
-            <img src="../images/premium-properties.jpg" alt="Premium Properties Banner" class="hero-image">
-            <div class="hero-content">
-                <h1>Premium Properties</h1>
-                <p class="hero-subtitle">Discover Exceptional Living Spaces</p>
-            </div>
-        </section>
-
-        <!-- Property Filter -->
-        <section class="filter-section">
-            <div class="filter-options">
-                <button class="filter-btn active" data-filter="all">All</button>
-                <button class="filter-btn" data-filter="commercial">Commercial</button>
-                <button class="filter-btn" data-filter="residential">Residential</button>
-            </div>
-        </section>
-
-        <!-- Featured Property -->
-        <section class="featured-property">
-            <h2>Featured Commercial Property</h2>
-            <div class="featured-card">
-                <div class="featured-image">
-                    <img src="../images/harborview-plaza.jpg" alt="Harbor View Plaza - Premium Retail and Office Space in Fond du Lac">
-                    <div class="property-badge">Commercial</div>
-                </div>
-                <div class="featured-info">
-                    <h3>Harbor View Plaza</h3>
-                    <div class="property-details">
-                        <span class="location">311-335 Winnebago Dr, Fond du Lac 54935</span>
-                        <span class="property-type">Retail & Office Space</span>
-                    </div>
-                    <div class="property-features">
-                        <span>33,165 SQ FT</span>
-                        <span>Prime Location</span>
-                        <span>Fully Leased</span>
-                    </div>
-                    <a href="harborview-plaza.html" class="view-details">Property Details</a>
-                </div>
-            </div>
-        </section>
-
-        <!-- Property Grid -->
-        <section class="property-grid">
-            <div class="property-card" data-type="residential">
-                <div class="property-image">
-                    <img src="../images/cotton-st.jpg" alt="52 E Cotton St Duplex in Fond du Lac">
-                    <div class="property-badge">Duplex</div>
-                </div>
-                <div class="property-info">
-                    <h3>52 E Cotton St</h3>
-                    <div class="property-details">
-                        <span class="location">Fond du Lac 54935</span>
-                        <span>Available for Rent</span>
-                    </div>
-                    <div class="property-features">
-                        <span>Upper Unit:  1 Bed 1 Bath - $1000 a month - 12 month lease</span>
-                        <span>Lower Unit:  2 Bed 1 Bath - $1300 a month - 12 month lease</span>
-                    </div>
-                    <a href="mailto:becky@acaciarealty.net?subject=Schedule%20Viewing%20-%2052%20E%20Cotton%20St" class="view-details">Schedule Viewing</a>
-                </div>
-            </div>
-
-            <div class="property-card" data-type="residential">
-                <div class="property-image">
-                    <img src="../images/mcwilliams-st.jpg" alt="Duplex property at 33 W McWilliams St with east and west units">
-                    <div class="property-badge">Duplex</div>
-                </div>
-                <div class="property-info">
-                    <h3>33 W McWilliams St</h3>
-                    <div class="property-details">
-                        <span class="location">Fond du Lac, WI 54935</span>
-                        <span>Not Available</span>
-                    </div>
-                    <div class="property-features">
-                        <span>East Unit:  2 Bed, 1 Bath - $675 a month - 12 month lease</span>
-                        <span>West Unit:  2 Bed, 1 Bath - $675 a month - 12 month lease</span>
-                    </div>
-                    <a href="mailto:becky@acaciarealty.net?subject=Schedule%20Viewing%20-%2033%20W%20McWilliams%20St" class="view-details">Not Available</a>
-                </div>
-            </div>
-
-            <div class="property-card" data-type="residential">
-                <div class="property-image">
-                    <img src="../images/marr-st.jpg" alt="Duplex properties at 297 S Marr St and 69 Eighth St">
-                    <div class="property-badge">Duplex</div>
-                </div>
-                <div class="property-info">
-                    <h3>297 S Marr St & 69 Eighth St</h3>
-                    <div class="property-details">
-                        <span class="location">Fond du Lac, WI 54935</span>
-                        <span>Not Available</span>
-                    </div>
-                    <div class="property-features">
-                        <span>Marr St:  2 Bed, 1 Bath - $850 a month - 12 month lease</span>
-                        <span>Eighth St:  3 Bed, 1 Bath - $1400 a month - 12 month lease</span>
-                    </div>
-                    <a href="mailto:becky@acaciarealty.net?subject=Schedule%20Viewing%20-%20297%20S%20Marr%20St%20%26%2069%20Eighth%20St" class="view-details">Not Available</a>
-                </div>
-            </div>
-
-            <div class="property-card" data-type="residential">
-                <div class="property-image">
-                    <img src="../images/johnson-st.jpg" alt="Single Family home at 236 E Johnson St">
-                    <div class="property-badge">Single Family</div>
-                </div>
-                <div class="property-info">
-                    <h3>236 E Johnson St</h3>
-                    <div class="property-details">
-                        <span class="location">Fond du Lac, WI 54935</span>
-                        <span>Not Available</span>
-                    </div>
-                    <div class="property-features">
-                        <span>3 Bed, 2 Bath - $1300 a month - 12 month lease</span>
-                    </div>
-                    <a href="mailto:becky@acaciarealty.net?subject=Schedule%20Viewing%20-%20236%20E%20Johnson%20St" class="view-details">Not Available</a>
-                </div>
-            </div>
-        </section>
-    </main>
-
-    <!-- Footer -->
-    <footer>
-        <div class="footer-content">
-            <div class="footer-left">
-                <h3>RLH Fond du Lac</h3>
-                <p>N7913 Townline Rd</p>
-                <p>Fond du Lac, WI 54937</p>
-            </div>
-            <div class="footer-right">
-                <h3>Quick Links</h3>
-                <ul>
-                    <li><a href="../index.html">Home</a></li>
-                    <li><a href="about.html">About Us</a></li>
-                    <li><a href="services.html">Services</a></li>
-                    <li><a href="properties.html">Properties</a></li>
-                    <li><a href="contact.html">Contact</a></li>
-                </ul>
-            </div>
+    <!-- McWilliams St -->
+    <div class="prop-card reveal" data-type="residential">
+      <div class="prop-photo">
+        <img src="../images/mcwilliams-st.jpg" alt="33 W McWilliams St duplex in Fond du Lac" />
+        <span class="prop-tag">Duplex</span>
+        <span class="prop-status status-leased">Leased</span>
+      </div>
+      <div class="prop-body">
+        <h3>33 W McWilliams St</h3>
+        <div class="prop-loc">Fond du Lac, WI 54935</div>
+        <div class="prop-unit"><b>East unit</b> &middot; 2 bed, 1 bath &middot; $675/mo &middot; 12-mo lease</div>
+        <div class="prop-unit"><b>West unit</b> &middot; 2 bed, 1 bath &middot; $675/mo &middot; 12-mo lease</div>
+        <div class="prop-actions">
+          <span class="btn btn-disabled btn-sm">Not available</span>
         </div>
-    </footer>
+      </div>
+    </div>
 
-    <script src="../js/main.js"></script>
+    <!-- Marr / Eighth -->
+    <div class="prop-card reveal" data-type="residential">
+      <div class="prop-photo">
+        <img src="../images/marr-st.jpg" alt="297 S Marr St and 69 Eighth St duplex in Fond du Lac" />
+        <span class="prop-tag">Duplex</span>
+        <span class="prop-status status-leased">Leased</span>
+      </div>
+      <div class="prop-body">
+        <h3>297 S Marr St &amp; 69 Eighth St</h3>
+        <div class="prop-loc">Fond du Lac, WI 54935</div>
+        <div class="prop-unit"><b>Marr St</b> &middot; 2 bed, 1 bath &middot; $850/mo &middot; 12-mo lease</div>
+        <div class="prop-unit"><b>Eighth St</b> &middot; 3 bed, 1 bath &middot; $1,400/mo &middot; 12-mo lease</div>
+        <div class="prop-actions">
+          <span class="btn btn-disabled btn-sm">Not available</span>
+        </div>
+      </div>
+    </div>
+
+    <!-- Johnson St -->
+    <div class="prop-card reveal" data-type="residential">
+      <div class="prop-photo">
+        <img src="../images/johnson-st.jpg" alt="236 E Johnson St single-family home in Fond du Lac" />
+        <span class="prop-tag">Single Family</span>
+        <span class="prop-status status-leased">Leased</span>
+      </div>
+      <div class="prop-body">
+        <h3>236 E Johnson St</h3>
+        <div class="prop-loc">Fond du Lac, WI 54935</div>
+        <div class="prop-unit"><b>Single-family home</b> &middot; 3 bed, 2 bath &middot; $1,300/mo &middot; 12-mo lease</div>
+        <div class="prop-actions">
+          <span class="btn btn-disabled btn-sm">Not available</span>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ============ CTA BAND ============ -->
+<section class="cta-band">
+  <div class="wrap">
+    <span class="eyebrow on-dark">Don't see the right fit?</span>
+    <h2>Tell us what you're looking for.</h2>
+    <p>Availability changes. Reach out and we'll let you know what's opening up — commercial or residential — before it hits the market.</p>
+    <a class="btn btn-primary" href="contact.html">Contact Robert Lynn Holdings <span class="arr">&rarr;</span></a>
+    <div class="cta-phone">(920) 602-3455 &nbsp;&middot;&nbsp; Fond du Lac, WI</div>
+  </div>
+</section>
+
+<!-- ============ FOOTER ============ -->
+<footer class="site">
+  <div class="foot-grid">
+    <div>
+      <a class="brand" href="../index.html">
+        <img class="logo-img" src="../images/logo-light.png" alt="Robert Lynn Holdings" />
+      </a>
+      <p class="ftxt">A local owner and operator of commercial and residential real estate in Fond du Lac, Wisconsin.</p>
+    </div>
+    <div class="foot-col">
+      <h5>Explore</h5>
+      <a href="about.html">About Us</a>
+      <a href="services.html">Services</a>
+      <a href="properties.html">Properties</a>
+      <a href="contact.html">Contact</a>
+    </div>
+    <div class="foot-col">
+      <h5>Properties</h5>
+      <a href="harborview-plaza.html">Harbor View Plaza</a>
+      <a href="properties.html">Residential rentals</a>
+      <a href="properties.html">Available now</a>
+    </div>
+    <div class="foot-col">
+      <h5>Contact</h5>
+      <p>N7913 Townline Rd</p>
+      <p>Fond du Lac, WI 54937</p>
+      <a href="tel:9206023455">(920) 602-3455</a>
+    </div>
+  </div>
+  <div class="foot-bottom">
+    <span>&copy; 2026 Robert Lynn Holdings LLC. All rights reserved.</span>
+    <span class="eho">
+      <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="#7e9290" stroke-width="2" aria-hidden="true"><path d="M3 11l9-7 9 7"/><path d="M5 10v10h14V10"/><path d="M9 20v-6h6v6"/></svg>
+      Equal Housing Opportunity
+    </span>
+  </div>
+</footer>
+
+<script>
+  var nav = document.getElementById('nav');
+  function onScroll(){
+    if(window.scrollY > 24){ nav.classList.add('scrolled'); }
+    else{ nav.classList.remove('scrolled'); }
+  }
+  window.addEventListener('scroll', onScroll, {passive:true});
+  onScroll();
+
+  var io = new IntersectionObserver(function(entries){
+    entries.forEach(function(e){ if(e.isIntersecting){ e.target.classList.add('in'); io.unobserve(e.target); } });
+  }, {threshold:.12});
+  document.querySelectorAll('.reveal').forEach(function(el){ io.observe(el); });
+
+  // mobile menu toggle
+  var menuBtn = document.querySelector('.menu-btn');
+  var navLinks = document.querySelector('nav.links');
+  if(menuBtn && navLinks){
+    menuBtn.setAttribute('aria-expanded','false');
+    menuBtn.addEventListener('click', function(){
+      var open = navLinks.classList.toggle('open');
+      menuBtn.setAttribute('aria-expanded', open ? 'true' : 'false');
+      menuBtn.innerHTML = open ? '&times;' : '&#9776;';
+    });
+    navLinks.querySelectorAll('a').forEach(function(a){
+      a.addEventListener('click', function(){
+        navLinks.classList.remove('open');
+        menuBtn.setAttribute('aria-expanded','false');
+        menuBtn.innerHTML = '&#9776;';
+      });
+    });
+  }
+
+  // property filter
+  var filterBtns = document.querySelectorAll('.filter-btn');
+  var filterItems = document.querySelectorAll('[data-type]');
+  filterBtns.forEach(function(btn){
+    btn.addEventListener('click', function(){
+      filterBtns.forEach(function(b){ b.classList.remove('active'); });
+      btn.classList.add('active');
+      var f = btn.getAttribute('data-filter');
+      filterItems.forEach(function(item){
+        var show = (f === 'all') || (item.getAttribute('data-type') === f);
+        item.classList.toggle('is-hidden', !show);
+      });
+    });
+  });
+</script>
 </body>
-</html> 
+</html>
