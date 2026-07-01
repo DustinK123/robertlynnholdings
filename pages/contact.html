@@ -229,7 +229,13 @@
     <div class="reveal">
       <span class="eyebrow">Send a message</span>
       <h2 class="contact-title">Tell us what you need.</h2>
-      <form action="https://formspree.io/f/mgvvqwdv" method="POST">
+      <form action="https://formsubmit.co/dustin.kissinger@gmail.com" method="POST">
+        <!-- FormSubmit settings -->
+        <input type="hidden" name="_subject" value="New inquiry from robertlynnholdings.com" />
+        <input type="hidden" name="_template" value="table" />
+        <input type="hidden" name="_captcha" value="false" />
+        <!-- honeypot: hidden from people, catches bots -->
+        <input type="text" name="_honey" style="display:none" tabindex="-1" autocomplete="off" />
         <div class="form-group">
           <label for="name">Name <span class="req">*</span></label>
           <input type="text" id="name" name="name" required />
