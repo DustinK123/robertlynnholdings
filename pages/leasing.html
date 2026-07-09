@@ -32,8 +32,27 @@
   "email": "robert.lynn.holdings@gmail.com",
   "areaServed": ["Fond du Lac", "Fox Cities", "Fox Valley", "Wisconsin"],
   "makesOffer": [
-    { "@type": "Offer", "name": "Commercial Leasing", "description": "Retail and office space for lease at Harbor View Plaza, Fond du Lac" },
-    { "@type": "Offer", "name": "Residential Rentals", "description": "Single-family homes and duplexes for lease in Fond du Lac" }
+    {
+      "@type": "Offer",
+      "name": "Anchor Retail Space — Harbor View Plaza",
+      "availabilityStarts": "2027-01-01",
+      "itemOffered": {
+        "@type": "CommercialProperty",
+        "name": "Harbor View Plaza — Anchor Retail Space",
+        "floorSize": { "@type": "QuantitativeValue", "value": 17871, "unitCode": "SQF" },
+        "address": { "@type": "PostalAddress", "streetAddress": "319, 325 & 327 Winnebago Dr", "addressLocality": "Fond du Lac", "addressRegion": "WI", "postalCode": "54935" }
+      }
+    },
+    {
+      "@type": "Offer",
+      "name": "Standalone Office — Harbor View Plaza",
+      "itemOffered": {
+        "@type": "CommercialProperty",
+        "name": "Harbor View Plaza — Standalone Office",
+        "floorSize": { "@type": "QuantitativeValue", "value": 1174, "unitCode": "SQF" },
+        "address": { "@type": "PostalAddress", "streetAddress": "333 Winnebago Dr", "addressLocality": "Fond du Lac", "addressRegion": "WI", "postalCode": "54935" }
+      }
+    }
   ]
 }
 </script>
@@ -93,44 +112,85 @@
 <!-- ============ WHAT'S AVAILABLE ============ -->
 <section class="listings" id="available">
   <div class="sec-head reveal">
-    <span class="eyebrow">What's available</span>
-    <h2 class="sec-title">Two ways to lease with us.</h2>
+    <span class="eyebrow">Currently available</span>
+    <h2 class="sec-title">Space that's ready to lease.</h2>
   </div>
-  <p class="sec-sub reveal"><span>Whether you're a business looking for a storefront or a family looking for a home, you'll deal directly with the owner who maintains the property.</span></p>
+  <p class="sec-sub reveal"><span>Here's what's open right now — two commercial spaces at Harbor View Plaza on Winnebago Drive. You lease directly from Robert Lynn Holdings, with no listing agent in the middle.</span></p>
 
-  <!-- Commercial -->
+  <!-- Anchor Retail -->
   <article class="listing reveal">
     <div class="listing-photo">
-      <img src="../images/harborview-plaza.jpg" alt="Commercial retail and office space for lease at Harbor View Plaza, Fond du Lac" />
-      <span class="listing-badge">Now leasing &middot; Commercial</span>
+      <img src="../images/harborview-plaza.jpg" alt="Anchor retail space for lease at Harbor View Plaza, Fond du Lac" />
+      <span class="listing-badge now">Now leasing &middot; Retail</span>
     </div>
     <div class="listing-body">
       <div class="listing-kicker">Harbor View Plaza &middot; Winnebago Drive</div>
-      <h2>Commercial Space for Lease</h2>
-      <div class="listing-addr">311&ndash;335 Winnebago Dr, Fond du Lac, WI 54935</div>
-      <div class="fact-row"><span>Anchor retail</span><span>17,871 SF</span></div>
-      <div class="fact-row"><span>Standalone office</span><span>1,174 SF</span></div>
-      <div class="fact-row"><span>Type</span><span>Retail &amp; office</span></div>
-      <p style="font-size:.95rem;color:#46555a;margin:16px 0 4px;">Prime frontage on Winnebago Drive with 180+ shared parking spaces and 8,200 vehicles per day. Ideal for retail, showroom, fitness, medical, professional service, and more.</p>
-      <a class="btn btn-line" href="/pages/available-commercial-space">View available commercial space <span class="arr">&rarr;</span></a>
+      <h2>Anchor Retail Space</h2>
+      <div class="listing-addr">319, 325 &amp; 327 Winnebago Dr, Fond du Lac, WI 54935</div>
+      <div class="fact-row"><span>Size</span><span>17,871 SF</span></div>
+      <div class="fact-row"><span>Type</span><span>Retail anchor</span></div>
+      <div class="fact-row"><span>Availability</span><span class="avail">Available January 2027</span></div>
+      <p style="font-size:.95rem;color:#46555a;margin:16px 0 2px;">Prime Winnebago Drive frontage — 8,200 vehicles per day and 180+ shared parking spaces.</p>
+      <div class="ideal">
+        <span class="ideal-label">Ideal for</span>
+        <div class="chips">
+          <span class="chip">Retail</span>
+          <span class="chip">Showroom</span>
+          <span class="chip">Discount retail</span>
+          <span class="chip">Fitness</span>
+          <span class="chip">Furniture</span>
+          <span class="chip">Medical</span>
+          <span class="chip">Nonprofit</span>
+          <span class="chip">Service use</span>
+        </div>
+      </div>
+      <a class="btn btn-line" href="mailto:robert.lynn.holdings@gmail.com?subject=Inquiry%20-%20Harbor%20View%20Plaza%20Anchor%20Retail%20(17,871%20SF)">Inquire about this space <span class="arr">&rarr;</span></a>
     </div>
   </article>
 
-  <!-- Residential -->
+  <!-- Standalone Office -->
   <article class="listing reveal">
     <div class="listing-photo">
-      <img src="../images/premium-properties.jpg" alt="Single-family and duplex rentals for lease in Fond du Lac" />
-      <span class="listing-badge">Residential &middot; Rentals</span>
+      <img src="../images/harborview-plaza.jpg" alt="Standalone office space for lease at Harbor View Plaza, Fond du Lac" />
+      <span class="listing-badge now">Now leasing &middot; Office</span>
+    </div>
+    <div class="listing-body">
+      <div class="listing-kicker">Harbor View Plaza &middot; Winnebago Drive</div>
+      <h2>Standalone Office</h2>
+      <div class="listing-addr">333 Winnebago Dr, Fond du Lac, WI 54935</div>
+      <div class="fact-row"><span>Size</span><span>1,174 SF</span></div>
+      <div class="fact-row"><span>Type</span><span>Standalone office</span></div>
+      <div class="fact-row"><span>Availability</span><span class="avail">Available / coming available</span></div>
+      <div class="ideal">
+        <span class="ideal-label">Ideal for</span>
+        <div class="chips">
+          <span class="chip">Office</span>
+          <span class="chip">Professional service</span>
+          <span class="chip">Insurance</span>
+          <span class="chip">Tax</span>
+          <span class="chip">Medical</span>
+          <span class="chip">Small business</span>
+        </div>
+      </div>
+      <a class="btn btn-line" href="mailto:robert.lynn.holdings@gmail.com?subject=Inquiry%20-%20Harbor%20View%20Plaza%20Standalone%20Office%20(1,174%20SF)">Inquire about this space <span class="arr">&rarr;</span></a>
+    </div>
+  </article>
+
+  <!-- Residential status -->
+  <article class="listing reveal">
+    <div class="listing-photo">
+      <img src="../images/johnson-st.jpg" alt="Residential single-family and duplex rentals in Fond du Lac" />
+      <span class="listing-badge leased">Fully leased &middot; Residential</span>
     </div>
     <div class="listing-body">
       <div class="listing-kicker">Across Fond du Lac</div>
       <h2>Residential Rentals</h2>
       <div class="listing-addr">Single-family homes &amp; duplexes, Fond du Lac, WI</div>
       <div class="fact-row"><span>Portfolio</span><span>7 units</span></div>
-      <div class="fact-row"><span>Type</span><span>Single-family &amp; duplex</span></div>
-      <div class="fact-row"><span>Terms</span><span>Straightforward 12-month leases</span></div>
-      <p style="font-size:.95rem;color:#46555a;margin:16px 0 4px;">Homes and duplexes throughout the city, owned and maintained locally. You get a landlord who's actually reachable and invested in keeping the home right.</p>
-      <a class="btn btn-line" href="/pages/properties">Browse residential rentals <span class="arr">&rarr;</span></a>
+      <div class="fact-row"><span>Status</span><span class="avail">All units currently leased</span></div>
+      <div class="fact-row"><span>Terms</span><span>12-month leases</span></div>
+      <p style="font-size:.95rem;color:#46555a;margin:16px 0 4px;">Every home and duplex in our residential portfolio is leased right now. Reach out to join the waitlist and we'll let you know first when something opens up. You can see the full portfolio on the <a href="/pages/properties" style="color:var(--teal);text-decoration:underline;">Properties</a> page.</p>
+      <a class="btn btn-line" href="mailto:robert.lynn.holdings@gmail.com?subject=Residential%20rental%20waitlist%20-%20robertlynnholdings.com">Join the waitlist <span class="arr">&rarr;</span></a>
     </div>
   </article>
 </section>
@@ -246,7 +306,7 @@
     <div class="foot-col">
       <h5>Properties</h5>
       <a href="/pages/harborview-plaza">Harbor View Plaza</a>
-      <a href="/pages/available-commercial-space">Available commercial space</a>
+      <a href="/pages/leasing">Available commercial space</a>
       <a href="/pages/properties">Residential rentals</a>
     </div>
     <div class="foot-col">
