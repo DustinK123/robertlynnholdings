@@ -398,12 +398,6 @@ nav.links a.current{opacity:1;color:var(--brass);}
 .page-leasing .hero p.lead{max-width:44ch;}
 .page-leasing .cta-band p{max-width:48ch;}
 .page-leasing .fact-row{padding:.8rem 0;}
-.res-note{max-width:var(--wrap);margin:26px auto 0;padding:16px 24px;background:#fff;border:1px solid var(--line);border-radius:3px;
-    display:flex;flex-wrap:wrap;align-items:center;justify-content:space-between;gap:12px 20px;}
-.res-note span{font-size:.95rem;color:#46555a;}
-.res-note b{color:var(--ink);}
-.res-note a:not(.btn){color:var(--teal);text-decoration:underline;}
-.res-note .btn{margin:0;}
 .listing-badge.now{background:#2f7d4f;}
 .listing-badge.leased{background:rgba(12,34,41,.62);}
 .feat-badge.now{background:#2f7d4f;color:#fff;font-size:.72rem;display:inline-flex;align-items:center;gap:.55em;}
