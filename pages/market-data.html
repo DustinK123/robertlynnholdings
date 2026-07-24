@@ -16,6 +16,21 @@
 <meta name="description" content="Local real estate market data for Fond du Lac County, Wisconsin — interest rates, residential home values and sales, commercial and economic indicators, farmland values, and Census demographics, with sources and update dates for every figure." />
 <meta name="keywords" content="Fond du Lac County market data, Fond du Lac real estate data, Wisconsin farmland values, Fond du Lac home prices, 10 year treasury, commercial real estate Fond du Lac, Census Fond du Lac, Robert Lynn Holdings" />
 <link rel="canonical" href="https://robertlynnholdings.com/pages/market-data" />
+
+<!-- Open Graph / Twitter -->
+<meta property="og:type" content="website" />
+<meta property="og:site_name" content="Robert Lynn Holdings" />
+<meta property="og:title" content="Fond du Lac County Market Data | Robert Lynn Holdings" />
+<meta property="og:description" content="Home prices, sales, commercial and economic indicators, farmland values, and Census demographics for Fond du Lac County, Wisconsin — every figure sourced and dated." />
+<meta property="og:url" content="https://robertlynnholdings.com/pages/market-data" />
+<meta property="og:image" content="https://robertlynnholdings.com/images/fonddulac-aerial.jpg" />
+<meta property="og:image:alt" content="Aerial view of Fond du Lac, Wisconsin" />
+<meta property="og:locale" content="en_US" />
+<meta name="twitter:card" content="summary_large_image" />
+<meta name="twitter:title" content="Fond du Lac County Market Data | Robert Lynn Holdings" />
+<meta name="twitter:description" content="Home prices, sales, commercial and economic indicators, farmland values, and Census demographics for Fond du Lac County, Wisconsin — every figure sourced and dated." />
+<meta name="twitter:image" content="https://robertlynnholdings.com/images/fonddulac-aerial.jpg" />
+
 <link rel="preconnect" href="https://fonts.googleapis.com" />
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
 <link href="https://fonts.googleapis.com/css2?family=Spectral:wght@300;400;500;600;700&family=Hanken+Grotesk:wght@400;500;600;700&family=IBM+Plex+Mono:wght@400;500;600&display=swap" rel="stylesheet" />
@@ -25,13 +40,87 @@
 <script type="application/ld+json">
 {
   "@context": "https://schema.org",
-  "@type": "WebPage",
-  "name": "Fond du Lac County Market Data",
-  "description": "Local real estate market data for Fond du Lac County, Wisconsin — rates, residential, commercial, farmland, and demographics.",
-  "url": "https://robertlynnholdings.com/pages/market-data",
-  "isPartOf": { "@type": "WebSite", "name": "Robert Lynn Holdings", "url": "https://robertlynnholdings.com" },
-  "publisher": { "@type": "RealEstateAgency", "name": "Robert Lynn Holdings", "telephone": "(920) 602-3455" },
-  "about": "Fond du Lac County, Wisconsin real estate market"
+  "@graph": [
+    {
+      "@type": "RealEstateAgency",
+      "@id": "https://robertlynnholdings.com/#organization",
+      "name": "Robert Lynn Holdings",
+      "url": "https://robertlynnholdings.com",
+      "telephone": "(920) 602-3455",
+      "email": "robert.lynn.holdings@gmail.com",
+      "address": {
+        "@type": "PostalAddress",
+        "streetAddress": "N7913 Townline Rd",
+        "addressLocality": "Fond du Lac",
+        "addressRegion": "WI",
+        "postalCode": "54937",
+        "addressCountry": "US"
+      },
+      "geo": { "@type": "GeoCoordinates", "latitude": "43.7844", "longitude": "-88.4469" },
+      "areaServed": {
+        "@type": "AdministrativeArea",
+        "name": "Fond du Lac County, Wisconsin",
+        "containedInPlace": { "@type": "State", "name": "Wisconsin" }
+      },
+      "sameAs": ["https://share.google/yVEsHcbRjNrLljBZk"]
+    },
+    {
+      "@type": "Dataset",
+      "@id": "https://robertlynnholdings.com/pages/market-data#dataset",
+      "name": "Fond du Lac County, Wisconsin Real Estate Market Data",
+      "description": "A regularly updated collection of real estate and economic indicators for Fond du Lac County, Wisconsin: interest rates, residential home values and sale activity, commercial and employment fundamentals, agricultural land values, and Census demographics. Every figure is attributed to its published source with the date it was released.",
+      "url": "https://robertlynnholdings.com/pages/market-data",
+      "license": "https://robertlynnholdings.com/pages/market-data",
+      "isAccessibleForFree": true,
+      "dateModified": "2026-07-24",
+      "creator": { "@id": "https://robertlynnholdings.com/#organization" },
+      "publisher": { "@id": "https://robertlynnholdings.com/#organization" },
+      "spatialCoverage": {
+        "@type": "AdministrativeArea",
+        "name": "Fond du Lac County, Wisconsin",
+        "geo": { "@type": "GeoCoordinates", "latitude": "43.7844", "longitude": "-88.4469" }
+      },
+      "keywords": [
+        "Fond du Lac County real estate",
+        "Fond du Lac home prices",
+        "Wisconsin farmland values",
+        "Fond du Lac commercial real estate",
+        "Fond du Lac County demographics"
+      ],
+      "variableMeasured": [
+        { "@type": "PropertyValue", "name": "Median Home Sale Price, Fond du Lac County" },
+        { "@type": "PropertyValue", "name": "Zillow Home Value Index, Fond du Lac County" },
+        { "@type": "PropertyValue", "name": "Homes Sold per Month, Fond du Lac County" },
+        { "@type": "PropertyValue", "name": "Median Days on Market, Fond du Lac County" },
+        { "@type": "PropertyValue", "name": "Unemployment Rate, Fond du Lac County" },
+        { "@type": "PropertyValue", "name": "Agricultural Land Values, Wisconsin" },
+        { "@type": "PropertyValue", "name": "Population and Household Characteristics, Fond du Lac County" },
+        { "@type": "PropertyValue", "name": "10-Year Treasury Yield" }
+      ]
+    },
+    {
+      "@type": "WebPage",
+      "@id": "https://robertlynnholdings.com/pages/market-data",
+      "name": "Fond du Lac County Market Data",
+      "description": "Local real estate market data for Fond du Lac County, Wisconsin — rates, residential, commercial, farmland, and demographics.",
+      "url": "https://robertlynnholdings.com/pages/market-data",
+      "dateModified": "2026-07-24",
+      "isPartOf": { "@type": "WebSite", "name": "Robert Lynn Holdings", "url": "https://robertlynnholdings.com" },
+      "publisher": { "@id": "https://robertlynnholdings.com/#organization" },
+      "mainEntity": { "@id": "https://robertlynnholdings.com/pages/market-data#dataset" },
+      "about": {
+        "@type": "AdministrativeArea",
+        "name": "Fond du Lac County, Wisconsin"
+      }
+    },
+    {
+      "@type": "BreadcrumbList",
+      "itemListElement": [
+        { "@type": "ListItem", "position": 1, "name": "Home", "item": "https://robertlynnholdings.com/" },
+        { "@type": "ListItem", "position": 2, "name": "Market Data", "item": "https://robertlynnholdings.com/pages/market-data" }
+      ]
+    }
+  ]
 }
 </script>
 
@@ -129,6 +218,12 @@
 .band-dark .m-item a.go{color:#d7c398;}
 .band-dark .m-item a.go:hover{color:var(--brass);}
 
+/* contextual in-prose links — global a{color:inherit} would render these as plain text */
+.m-inline-link{color:var(--teal);border-bottom:1px solid rgba(31,90,102,.35);transition:color .15s ease,border-color .15s ease;}
+.m-inline-link:hover{color:var(--brass-deep);border-bottom-color:var(--brass);}
+.band-dark .m-inline-link,.cta-band .m-inline-link{color:#d7c398;border-bottom-color:rgba(215,195,152,.45);}
+.band-dark .m-inline-link:hover,.cta-band .m-inline-link:hover{color:var(--brass);border-bottom-color:var(--brass);}
+
 /* sources / method */
 .m-sources{max-width:var(--wrap);margin:0 auto;padding:0 28px;}
 .m-srcgrid{columns:2;column-gap:40px;margin-top:20px;}
@@ -215,7 +310,7 @@
   <div class="sec-head reveal">
     <span class="eyebrow">02 &middot; Residential</span>
     <h2 class="sec-title">Homes &amp; housing.</h2>
-    <p class="sec-sub"><span>County sale activity plus longer-run Census housing characteristics. Two value measures appear because they answer different questions: Zillow's typical-home index is fresher; the Census median owner-occupied value is broader but lags.</span></p>
+    <p class="sec-sub"><span>County sale activity plus longer-run Census housing characteristics. Two value measures appear because they answer different questions: Zillow's typical-home index is fresher; the Census median owner-occupied value is broader but lags. We own and manage <a class="m-inline-link" href="/pages/properties">residential rental properties in Fond du Lac</a>.</span></p>
   </div>
   <div class="m-grid" id="grid-residential"></div>
 </section>
@@ -225,7 +320,7 @@
   <div class="sec-head reveal">
     <span class="eyebrow on-dark">03 &middot; Commercial</span>
     <h2 class="sec-title">Commercial &amp; economic base.</h2>
-    <p class="sec-sub"><span style="color:#bcd0ce;">County-level commercial sale prices aren't published on a regular cadence, so this section tracks the fundamentals that underwrite commercial demand — employment, the development pipeline, and the county's largest employers.</span></p>
+    <p class="sec-sub"><span style="color:#bcd0ce;">County-level commercial sale prices aren't published on a regular cadence, so this section tracks the fundamentals that underwrite commercial demand — employment, the development pipeline, and the county's largest employers. See our <a class="m-inline-link" href="/pages/leasing">available commercial space in Fond du Lac</a>, including <a class="m-inline-link" href="/pages/harborview-plaza">Harbor View Plaza</a>.</span></p>
   </div>
   <div class="m-grid" id="grid-commercial"></div>
   <div class="m-cards" id="cards-commercial"></div>
@@ -286,6 +381,7 @@
     <span class="eyebrow on-dark">Get in touch</span>
     <h2>Looking at Fond du Lac? Let's talk.</h2>
     <p>Whether you're a business weighing a location or an investor watching the local market, you'll reach the owner directly — no call center, no runaround.</p>
+    <p style="margin-top:-.4rem;">More from Robert Lynn Holdings: <a class="m-inline-link" href="/pages/leasing">available commercial space</a> &middot; <a class="m-inline-link" href="/pages/properties">residential rentals &amp; land</a> &middot; <a class="m-inline-link" href="/pages/services">property management services</a> &middot; <a class="m-inline-link" href="/pages/about">about our Fond du Lac ownership</a></p>
     <a class="btn btn-primary" href="/pages/contact">Contact Robert Lynn Holdings <span class="arr">&rarr;</span></a>
     <div class="cta-phone">(920) 602-3455 &nbsp;&middot;&nbsp; Fond du Lac, WI</div>
   </div>
@@ -306,8 +402,8 @@
       <a href="/pages/services">Services</a>
       <a href="/pages/leasing">Leasing</a>
       <a href="/pages/properties">Properties</a>
-      <a href="/pages/contact">Contact</a>
       <a href="/pages/market-data">Market Data</a>
+      <a href="/pages/contact">Contact</a>
     </div>
     <div class="foot-col">
       <h5>Properties</h5>
