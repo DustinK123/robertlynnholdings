@@ -1,0 +1,530 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<!-- Google Analytics (GA4) -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-1G7VXTD5YZ"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+  gtag('config', 'G-1G7VXTD5YZ');
+</script>
+
+<title>Fond du Lac County Market Data | Robert Lynn Holdings</title>
+<meta name="description" content="Local real estate market data for Fond du Lac County, Wisconsin — interest rates, residential home values and sales, commercial and economic indicators, farmland values, and Census demographics, with sources and update dates for every figure." />
+<meta name="keywords" content="Fond du Lac County market data, Fond du Lac real estate data, Wisconsin farmland values, Fond du Lac home prices, 10 year treasury, commercial real estate Fond du Lac, Census Fond du Lac, Robert Lynn Holdings" />
+<link rel="canonical" href="https://robertlynnholdings.com/pages/market-data" />
+<link rel="preconnect" href="https://fonts.googleapis.com" />
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+<link href="https://fonts.googleapis.com/css2?family=Spectral:wght@300;400;500;600;700&family=Hanken+Grotesk:wght@400;500;600;700&family=IBM+Plex+Mono:wght@400;500;600&display=swap" rel="stylesheet" />
+<link rel="stylesheet" href="/css/styles.css" />
+
+<!-- Schema Markup -->
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "WebPage",
+  "name": "Fond du Lac County Market Data",
+  "description": "Local real estate market data for Fond du Lac County, Wisconsin — rates, residential, commercial, farmland, and demographics.",
+  "url": "https://robertlynnholdings.com/pages/market-data",
+  "isPartOf": { "@type": "WebSite", "name": "Robert Lynn Holdings", "url": "https://robertlynnholdings.com" },
+  "publisher": { "@type": "RealEstateAgency", "name": "Robert Lynn Holdings", "telephone": "(920) 602-3455" },
+  "about": "Fond du Lac County, Wisconsin real estate market"
+}
+</script>
+
+<style>
+/* ===== page-data: market data components, built on the shared site tokens ===== */
+.page-data .hero .addr{display:flex;gap:22px;flex-wrap:wrap;align-items:center;}
+.page-data .live-dot{display:none;align-items:center;gap:.5em;color:#8ff0ab;}
+.page-data .live-dot::before{content:"";width:8px;height:8px;border-radius:50%;background:#8ff0ab;
+  box-shadow:0 0 0 0 rgba(143,240,171,.6);animation:mdpulse 2.4s infinite;}
+@keyframes mdpulse{0%{box-shadow:0 0 0 0 rgba(143,240,171,.6)}70%{box-shadow:0 0 0 7px rgba(143,240,171,0)}100%{box-shadow:0 0 0 0 rgba(143,240,171,0)}}
+
+.page-data .sec-head .cad-legend{max-width:var(--wrap);margin:16px auto 0;padding:0 28px;
+  display:flex;gap:10px;flex-wrap:wrap;align-items:center;}
+.page-data .legend-lbl{font-family:var(--mono);font-size:.66rem;letter-spacing:.16em;text-transform:uppercase;color:var(--teal);}
+
+.m-grid{max-width:var(--wrap);margin:30px auto 0;padding:0 28px;
+  display:grid;grid-template-columns:repeat(4,1fr);gap:16px;}
+.m-tile{background:#fff;border:1px solid var(--line);border-radius:3px;padding:22px 22px 18px;
+  display:flex;flex-direction:column;min-height:170px;
+  transition:transform .2s ease, box-shadow .2s ease, border-color .2s ease;}
+.m-tile:hover{transform:translateY(-3px);box-shadow:var(--shadow);border-color:var(--brass);}
+.m-top{display:flex;justify-content:space-between;align-items:flex-start;gap:10px;margin-bottom:auto;}
+.m-label{font-family:var(--mono);font-size:.72rem;letter-spacing:.08em;color:var(--teal);text-transform:uppercase;line-height:1.35;}
+.m-val{font-family:var(--mono);font-size:1.72rem;font-weight:600;color:var(--ink);letter-spacing:-.02em;line-height:1.05;margin:16px 0 2px;}
+.m-val .m-unit{font-size:.86rem;font-weight:500;color:#5c6f73;letter-spacing:0;}
+.m-chg{font-family:var(--mono);font-size:.76rem;font-weight:500;letter-spacing:.01em;display:inline-flex;align-items:center;gap:.4em;}
+.m-chg.up{color:#2f7d4f;} .m-chg.down{color:#b4472e;} .m-chg.flat{color:#5c6f73;}
+.m-meta{margin-top:14px;padding-top:12px;border-top:1px solid var(--line);
+  font-family:var(--mono);font-size:.66rem;letter-spacing:.03em;color:#7e8f91;line-height:1.5;
+  display:flex;justify-content:space-between;align-items:center;gap:8px;}
+.m-meta a{color:var(--teal);} .m-meta a:hover{color:var(--brass-deep);}
+.m-asof{color:#5c6f73;}
+
+.m-badge{font-family:var(--mono);font-size:.58rem;font-weight:600;letter-spacing:.1em;text-transform:uppercase;
+  padding:3px 7px;border-radius:2px;border:1px solid var(--line);color:#5c6f73;background:var(--paper);white-space:nowrap;flex:none;}
+.m-badge.daily{color:#1f5a66;border-color:rgba(31,90,102,.4);background:rgba(31,90,102,.06);}
+.m-badge.weekly{color:#2f7d4f;border-color:rgba(47,125,79,.4);background:rgba(47,125,79,.07);}
+.m-badge.monthly{color:#a6792e;border-color:rgba(166,121,46,.4);background:rgba(194,145,62,.09);}
+.m-badge.quarterly{color:#7a5aa6;border-color:rgba(122,90,166,.4);background:rgba(122,90,166,.07);}
+.m-badge.annual{color:#b4643a;border-color:rgba(180,100,58,.4);background:rgba(180,100,58,.08);}
+.m-badge.census{color:#5c6f73;border-color:var(--line);background:var(--paper-2);}
+
+.api-tag{font-family:var(--mono);font-size:.56rem;font-weight:600;letter-spacing:.08em;text-transform:uppercase;
+  color:var(--brass-deep);background:rgba(194,145,62,.12);border-radius:2px;padding:2px 5px;flex:none;}
+
+/* dark band tiles (commercial / economic) */
+.band-dark{background:var(--deep);color:var(--paper);}
+.band-dark .sec-title{color:var(--paper);}
+.band-dark .legend-lbl{color:#9db6b3;}
+.band-dark .m-tile{background:rgba(244,243,238,.04);border-color:var(--line-light);}
+.band-dark .m-tile:hover{border-color:var(--brass);}
+.band-dark .m-label{color:#a9c6c2;}
+.band-dark .m-val{color:var(--paper);}
+.band-dark .m-val .m-unit{color:#bcd0ce;}
+.band-dark .m-meta{border-top-color:var(--line-light);color:#8fa8a5;}
+.band-dark .m-meta a{color:#d7c398;}
+.band-dark .m-asof{color:#a9c6c2;}
+.band-dark .m-badge{background:rgba(244,243,238,.05);border-color:var(--line-light);color:#bcd0ce;}
+
+/* narrative cards + employer chips */
+.m-cards{max-width:var(--wrap);margin:24px auto 0;padding:0 28px;display:grid;grid-template-columns:repeat(3,1fr);gap:16px;}
+.band-dark .m-note-card{background:rgba(244,243,238,.04);border-color:var(--line-light);}
+.m-note-card{background:#fff;border:1px solid var(--line);border-radius:3px;padding:24px 24px;}
+.m-note-card h3{font-family:var(--serif);font-size:1.2rem;font-weight:600;margin-bottom:.4rem;}
+.band-dark .m-note-card h3{color:var(--paper);}
+.m-note-card p{font-size:.95rem;color:#46555a;}
+.band-dark .m-note-card p{color:#bcd0ce;}
+.m-note-card .k{color:var(--brass-deep);font-weight:600;}
+.band-dark .m-note-card .k{color:var(--brass);}
+.m-note-card a{font-family:var(--mono);font-size:.7rem;letter-spacing:.08em;text-transform:uppercase;color:var(--teal);display:inline-block;margin-top:12px;}
+.band-dark .m-note-card a{color:#d7c398;}
+
+.m-employers{max-width:var(--wrap);margin:16px auto 0;padding:0 28px;}
+.m-emp-label{font-family:var(--mono);font-size:.68rem;letter-spacing:.14em;text-transform:uppercase;color:#9db6b3;margin-bottom:12px;}
+.m-emp-chips{display:flex;flex-wrap:wrap;gap:9px;}
+.m-emp-chips span{font-family:var(--sans);font-size:.9rem;color:var(--paper);
+  background:rgba(244,243,238,.05);border:1px solid var(--line-light);border-radius:2px;padding:.5em .85em;}
+
+/* news */
+.m-news{max-width:var(--wrap);margin:30px auto 0;padding:0 28px;display:grid;grid-template-columns:repeat(3,1fr);gap:16px;}
+.m-item{background:#fff;border:1px solid var(--line);border-radius:3px;padding:22px 24px;display:flex;flex-direction:column;
+  transition:transform .2s ease, box-shadow .2s ease, border-color .2s ease;}
+.m-item:hover{transform:translateY(-3px);box-shadow:var(--shadow);border-color:var(--brass);}
+.m-item .m-src2{font-family:var(--mono);font-size:.66rem;letter-spacing:.08em;text-transform:uppercase;color:var(--teal);margin-bottom:10px;}
+.m-item h3{font-family:var(--serif);font-size:1.14rem;font-weight:600;line-height:1.25;margin-bottom:.5rem;}
+.m-item p{font-size:.9rem;color:#46555a;margin-bottom:1rem;}
+.m-item a.go{font-family:var(--mono);font-size:.7rem;letter-spacing:.08em;text-transform:uppercase;color:var(--teal);margin-top:auto;}
+.m-item a.go:hover{color:var(--brass-deep);}
+
+/* sources / method */
+.m-sources{max-width:var(--wrap);margin:0 auto;padding:0 28px;}
+.m-srcgrid{columns:2;column-gap:40px;margin-top:20px;}
+.m-srcgrid p{break-inside:avoid;font-family:var(--mono);font-size:.74rem;color:#46555a;margin-bottom:9px;line-height:1.5;}
+.m-method{margin-top:22px;font-size:.92rem;color:#3a4a4f;max-width:92ch;line-height:1.7;}
+
+@media(max-width:980px){
+  .m-grid{grid-template-columns:repeat(2,1fr);}
+  .m-cards,.m-news{grid-template-columns:1fr 1fr;}
+}
+@media(max-width:620px){
+  .m-grid{grid-template-columns:1fr;}
+  .m-cards,.m-news{grid-template-columns:1fr;}
+  .m-srcgrid{columns:1;}
+}
+</style>
+</head>
+<body class="page-data">
+
+<!-- ============ NAV ============ -->
+<header class="nav" id="nav">
+  <div class="nav-inner">
+    <a class="brand" href="/" aria-label="Robert Lynn Holdings home">
+      <img class="logo-img" src="../images/logo-light.png" alt="Robert Lynn Holdings" />
+    </a>
+    <nav class="links">
+      <a href="/pages/about">About</a>
+      <a href="/pages/services">Services</a>
+      <a href="/pages/leasing">Leasing</a>
+      <a href="/pages/properties">Properties</a>
+      <a href="/pages/market-data" class="current">Market Data</a>
+      <a href="/pages/contact">Contact</a>
+      <a class="btn btn-primary nav-cta" href="/pages/contact">Inquire <span class="arr">&rarr;</span></a>
+    </nav>
+    <button class="menu-btn" aria-label="Open menu">&#9776;</button>
+  </div>
+</header>
+
+<!-- ============ HERO ============ -->
+<section class="hero">
+  <div class="hero-inner" style="grid-template-columns:1fr;gap:0;">
+    <div class="hero-text">
+      <span class="eyebrow on-dark">Market intelligence</span>
+      <h1>Fond du Lac County <em>market data.</em></h1>
+      <p class="lead" style="max-width:56ch;">The numbers we watch as a local owner and operator — interest rates, residential values, commercial and economic fundamentals, and farmland — for Fond du Lac County, Wisconsin. Every figure carries its source and the date it was published.</p>
+      <div class="addr">
+        <span>Last updated <b id="updated" style="color:var(--brass);">July 24, 2026</b></span>
+        <span id="t10-live" class="live-dot">Treasury yield live</span>
+        <span style="color:#9db6b3;">Rates update live &middot; other figures refreshed monthly</span>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ============ BREADCRUMB ============ -->
+<div class="crumb-bar">
+  <div class="crumb">
+    <a href="/">Home</a><span class="sep">/</span><span>Market Data</span>
+  </div>
+</div>
+
+<!-- ============ 01 RATES ============ -->
+<section class="services">
+  <div class="sec-head reveal">
+    <span class="eyebrow">01 &middot; Rates</span>
+    <h2 class="sec-title">Rate &amp; macro context.</h2>
+    <div class="cad-legend">
+      <span class="legend-lbl">Cadence</span>
+      <span class="m-badge daily">Daily</span>
+      <span class="m-badge weekly">Weekly</span>
+      <span class="m-badge monthly">Monthly</span>
+      <span class="m-badge quarterly">Quarterly</span>
+      <span class="m-badge annual">Annual</span>
+      <span class="m-badge census">Census</span>
+    </div>
+  </div>
+  <div class="m-grid" id="grid-rates"></div>
+</section>
+
+<hr class="waterline" />
+
+<!-- ============ 02 RESIDENTIAL ============ -->
+<section class="services">
+  <div class="sec-head reveal">
+    <span class="eyebrow">02 &middot; Residential</span>
+    <h2 class="sec-title">Homes &amp; housing.</h2>
+    <p class="sec-sub"><span>County sale activity plus longer-run Census housing characteristics. Two value measures appear because they answer different questions: Zillow's typical-home index is fresher; the Census median owner-occupied value is broader but lags.</span></p>
+  </div>
+  <div class="m-grid" id="grid-residential"></div>
+</section>
+
+<!-- ============ 03 COMMERCIAL / ECONOMIC (dark band) ============ -->
+<section class="band-dark">
+  <div class="sec-head reveal">
+    <span class="eyebrow on-dark">03 &middot; Commercial</span>
+    <h2 class="sec-title">Commercial &amp; economic base.</h2>
+    <p class="sec-sub"><span style="color:#bcd0ce;">County-level commercial sale prices aren't published on a regular cadence, so this section tracks the fundamentals that underwrite commercial demand — employment, the development pipeline, and the county's largest employers.</span></p>
+  </div>
+  <div class="m-grid" id="grid-commercial"></div>
+  <div class="m-cards" id="cards-commercial"></div>
+  <div class="m-employers">
+    <div class="m-emp-label">Largest area employers &middot; Envision Greater Fond du Lac</div>
+    <div class="m-emp-chips" id="chips-employers"></div>
+  </div>
+</section>
+
+<!-- ============ 04 FARM ============ -->
+<section class="services">
+  <div class="sec-head reveal">
+    <span class="eyebrow">04 &middot; Farmland</span>
+    <h2 class="sec-title">Farm &amp; agricultural land.</h2>
+    <p class="sec-sub"><span>Three land-value series measure different things and won't match: USDA NASS surveys all farm real estate; UW&ndash;Extension tracks actual market sales; the county profile is from the 2022 Census of Agriculture. Each is labeled below.</span></p>
+  </div>
+  <div class="m-grid" id="grid-farm"></div>
+  <div class="m-cards" id="cards-farm"></div>
+</section>
+
+<hr class="waterline" />
+
+<!-- ============ 05 DEMOGRAPHICS ============ -->
+<section class="services">
+  <div class="sec-head reveal">
+    <span class="eyebrow">05 &middot; Demographics</span>
+    <h2 class="sec-title">People &amp; households.</h2>
+    <p class="sec-sub"><span>Population and household characteristics from the U.S. Census Bureau. Dollar figures are 2020&ndash;2024 American Community Survey 5-year estimates, in 2024 dollars.</span></p>
+  </div>
+  <div class="m-grid" id="grid-demographics"></div>
+</section>
+
+<!-- ============ 06 NEWS ============ -->
+<section class="band-dark">
+  <div class="sec-head reveal">
+    <span class="eyebrow on-dark">06 &middot; News &amp; reports</span>
+    <h2 class="sec-title">What's moving the local market.</h2>
+    <p class="sec-sub"><span style="color:#bcd0ce;">Recent, linkable coverage across all three segments. Curated and refreshed on review.</span></p>
+  </div>
+  <div class="m-news" id="grid-news"></div>
+</section>
+
+<!-- ============ SOURCES / METHOD ============ -->
+<section class="services">
+  <div class="sec-head reveal">
+    <span class="eyebrow">Appendix</span>
+    <h2 class="sec-title" style="font-size:clamp(1.4rem,2.4vw,1.9rem);">Sources &amp; method.</h2>
+  </div>
+  <div class="m-sources reveal">
+    <div class="m-srcgrid" id="srclist"></div>
+    <p class="m-method" id="method"></p>
+  </div>
+</section>
+
+<!-- ============ CTA BAND ============ -->
+<section class="cta-band">
+  <div class="wrap">
+    <span class="eyebrow on-dark">Get in touch</span>
+    <h2>Looking at Fond du Lac? Let's talk.</h2>
+    <p>Whether you're a business weighing a location or an investor watching the local market, you'll reach the owner directly — no call center, no runaround.</p>
+    <a class="btn btn-primary" href="/pages/contact">Contact Robert Lynn Holdings <span class="arr">&rarr;</span></a>
+    <div class="cta-phone">(920) 602-3455 &nbsp;&middot;&nbsp; Fond du Lac, WI</div>
+  </div>
+</section>
+
+<!-- ============ FOOTER ============ -->
+<footer class="site">
+  <div class="foot-grid">
+    <div>
+      <a class="brand" href="/">
+        <img class="logo-img" src="../images/logo-light.png" alt="Robert Lynn Holdings" />
+      </a>
+      <p class="ftxt">A local owner and operator of commercial and residential real estate in Fond du Lac, Wisconsin.</p>
+    </div>
+    <div class="foot-col">
+      <h5>Explore</h5>
+      <a href="/pages/about">About Us</a>
+      <a href="/pages/services">Services</a>
+      <a href="/pages/leasing">Leasing</a>
+      <a href="/pages/properties">Properties</a>
+      <a href="/pages/contact">Contact</a>
+      <a href="/pages/market-data">Market Data</a>
+    </div>
+    <div class="foot-col">
+      <h5>Properties</h5>
+      <a href="https://robertlynnhomes.com" target="_blank" rel="noopener">Harbor Lights Condominiums</a>
+      <a href="/pages/harborview-plaza">Harbor View Plaza</a>
+      <a href="/pages/properties">Residential rentals</a>
+      <a href="/pages/leasing">Available commercial space</a>
+    </div>
+    <div class="foot-col">
+      <h5>Contact</h5>
+      <p>N7913 Townline Rd</p>
+      <p>Fond du Lac, WI 54937</p>
+      <a href="tel:9206023455">(920) 602-3455</a>
+    </div>
+  </div>
+  <div class="foot-bottom">
+    <span>&copy; 2026 Robert Lynn Holdings LLC. All rights reserved. Market data for informational use only.</span>
+    <span class="eho">
+      <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="#7e9290" stroke-width="2" aria-hidden="true"><path d="M3 11l9-7 9 7"/><path d="M5 10v10h14V10"/><path d="M9 20v-6h6v6"/></svg>
+      Equal Housing Opportunity
+    </span>
+  </div>
+</footer>
+
+<script>
+/* ====================== DATA ======================
+   Each figure: {label, value, unit, change:{dir,text}, asOf, cadence, source, url, api}
+   To update by hand, edit the value + asOf here. Figures with api:true can be
+   wired to a live source; the 10-yr Treasury already auto-updates from FRED below.
+   ================================================== */
+const DATA = {
+  updated: "July 24, 2026",
+  rates: [
+    { id:"treasury", label:"10-Year Treasury Yield", value:"4.71%", change:{dir:"up",text:"updates daily"},
+      asOf:"Jul 23, 2026", cadence:"daily", api:true, source:"FRED (DGS10)", url:"https://fred.stlouisfed.org/series/DGS10" },
+    { label:"30-Year Fixed Mortgage", unit:"U.S. avg", value:"6.58%", change:{dir:"up",text:"+0.03 WoW"},
+      asOf:"Wk of Jul 23, 2026", cadence:"weekly", api:false, source:"Freddie Mac PMMS", url:"https://www.freddiemac.com/pmms" },
+    { label:"Fed Funds Target", value:"3.50&ndash;3.75%", change:{dir:"flat",text:"held since Jun 17"},
+      asOf:"FOMC Jun 2026", cadence:"quarterly", api:false, source:"Federal Reserve", url:"https://www.federalreserve.gov/monetarypolicy.htm" },
+    { label:"FHA Loan Limit", unit:"1-unit floor", value:"$541,287", change:null,
+      asOf:"Eff. Jan 2026", cadence:"annual", api:true, source:"HUD / FHA", url:"https://entp.hud.gov/idapp/html/hicostlook.cfm" },
+  ],
+  residential: [
+    { label:"Median Sale Price", unit:"county", value:"$273,000", change:{dir:"up",text:"+3.0% YoY"},
+      asOf:"Nov 2025", cadence:"monthly", api:false, source:"Redfin", url:"https://www.redfin.com/county/3182/WI/Fond-du-Lac-County/housing-market" },
+    { label:"Typical Home Value", unit:"ZHVI", value:"$296,775", change:{dir:"up",text:"+4.8% YoY"},
+      asOf:"Jun 2026", cadence:"monthly", api:false, source:"Zillow", url:"https://www.zillow.com/home-values/3092/fond-du-lac-county-wi/" },
+    { label:"Homes Sold", unit:"county, month", value:"75", change:{dir:"down",text:"&minus;16.7% YoY"},
+      asOf:"Nov 2025", cadence:"monthly", api:false, source:"Redfin", url:"https://www.redfin.com/county/3182/WI/Fond-du-Lac-County/housing-market" },
+    { label:"Median Days on Market", value:"47", unit:"days", change:{dir:"flat",text:"~flat YoY"},
+      asOf:"Nov 2025", cadence:"monthly", api:false, source:"Redfin", url:"https://www.redfin.com/county/3182/WI/Fond-du-Lac-County/housing-market" },
+    { label:"Median Owner-Occupied Value", value:"$222,800", change:null,
+      asOf:"2020&ndash;24 ACS", cadence:"census", api:true, source:"U.S. Census", url:"https://www.census.gov/quickfacts/fact/table/fonddulaccountywisconsin" },
+    { label:"Median Gross Rent", value:"$960", unit:"/mo", change:null,
+      asOf:"2020&ndash;24 ACS", cadence:"census", api:true, source:"U.S. Census", url:"https://www.census.gov/quickfacts/fact/table/fonddulaccountywisconsin" },
+    { label:"Homeownership Rate", value:"70.7%", change:null,
+      asOf:"2020&ndash;24 ACS", cadence:"census", api:true, source:"U.S. Census", url:"https://www.census.gov/quickfacts/fact/table/fonddulaccountywisconsin" },
+    { label:"Wisconsin Median", unit:"statewide context", value:"$360,000", change:{dir:"up",text:"+5.9% YoY"},
+      asOf:"Jun 2026", cadence:"monthly", api:false, source:"WRA", url:"https://www.wra.org/HSRJun2026/" },
+  ],
+  commercial: [
+    { label:"County Unemployment", value:"3.2%", change:{dir:"flat",text:"vs 3.3% Wisconsin"},
+      asOf:"Jun 2026", cadence:"monthly", api:true, source:"WI DWD / BLS", url:"https://dwd.wisconsin.gov/press/2026/260722-june-local.htm" },
+    { label:"Equalized Property Values", unit:"city", value:"+~10%", change:{dir:"up",text:"tax rate &minus;~30%"},
+      asOf:"2026 budget", cadence:"annual", api:false, source:"City of Fond du Lac", url:"https://kfiz.com/city-of-fond-du-lac-publishes-its-proposed-2026-budget/" },
+    { label:"Econ. Impact", unit:"Envision, 2017&ndash;23", value:"$282M", change:{dir:"flat",text:"2,800 jobs"},
+      asOf:"2017&ndash;2023", cadence:"annual", api:false, source:"Envision Greater FDL", url:"https://insightonbusiness.com/envision-greater-fond-du-lac-sets-2030-goals/" },
+    { label:"RLH Commercial Footprint", unit:"Harbor View Plaza", value:"33,165", change:{dir:"flat",text:"SF retail &amp; office"},
+      asOf:"Current", cadence:"annual", api:false, source:"Robert Lynn Holdings", url:"/pages/harborview-plaza" },
+  ],
+  commercialCards: [
+    { h:"Aeronautical Industrial Park", p:"<span class='k'>Gold Shovel&ndash;certified</span>, shovel-ready commercial/industrial sites anchor the county's development pipeline under Envision Greater Fond du Lac.",
+      url:"https://businessinfocusmagazine.com/2025/07/fueling-growth-in-fond-du-lac-how-strategic-efforts-are-powering-success/", cta:"Read" },
+    { h:"Downtown redevelopment", p:"The <span class='k'>Rueping Lofts</span> conversion (7 residential + 1 commercial) and a <span class='k'>$1.7M Main Street</span> rebuild signal continued mixed-use investment downtown.",
+      url:"https://spectrumnews1.com/wi/milwaukee/news/2026/01/29/downtown-fond-du-lac-living", cta:"Read" },
+    { h:"Adaptive reuse", p:"The former UW Oshkosh&ndash;Fond du Lac campus was repurposed into a revenue-generating county complex &mdash; offices, event space, and public-safety training.",
+      url:"https://spectrumnews1.com/wi/milwaukee/news/2025/02/06/fond-du-lac-county-complex-transforms-campus", cta:"Read" },
+  ],
+  employers: ["Mercury Marine","Alliance Laundry Systems","Grande Cheese","Saputo Cheese","Wells Vehicle Electronics","BCI Burke","J.F. Ahern Co.","Fives &ndash; Giddings &amp; Lewis","Society Insurance"],
+  farm: [
+    { label:"WI Farm Real Estate", unit:"/acre", value:"$6,420", change:{dir:"up",text:"+$300 YoY"},
+      asOf:"2025", cadence:"annual", api:true, source:"USDA NASS", url:"https://www.nass.usda.gov/Statistics_by_State/Wisconsin/" },
+    { label:"WI Cropland", unit:"/acre", value:"$7,250", change:{dir:"up",text:"+$450 YoY"},
+      asOf:"2025", cadence:"annual", api:true, source:"USDA NASS", url:"https://www.nass.usda.gov/Statistics_by_State/Wisconsin/" },
+    { label:"WI Pasture", unit:"/acre", value:"$3,300", change:{dir:"up",text:"+$100 YoY"},
+      asOf:"2025", cadence:"annual", api:true, source:"USDA NASS", url:"https://www.nass.usda.gov/Statistics_by_State/Wisconsin/" },
+    { label:"Ag Land Sales &mdash; E. Central WI", unit:"/acre", value:"$8,599", change:{dir:"up",text:"state $7,238, +9.6%"},
+      asOf:"2025", cadence:"annual", api:false, source:"UW&ndash;Extension", url:"https://farms.extension.wisc.edu/articles/wisconsin-agricultural-land-prices/" },
+    { label:"Farms in County", value:"1,163", change:null,
+      asOf:"2022 Ag Census", cadence:"census", api:false, source:"USDA NASS", url:"https://www.nass.usda.gov/Publications/AgCensus/2022/Online_Resources/County_Profiles/Wisconsin/cp55039.pdf" },
+    { label:"Land in Farms", unit:"acres", value:"308,888", change:{dir:"flat",text:"avg farm 266 ac"},
+      asOf:"2022 Ag Census", cadence:"census", api:false, source:"USDA NASS", url:"https://www.nass.usda.gov/Publications/AgCensus/2022/Online_Resources/County_Profiles/Wisconsin/cp55039.pdf" },
+    { label:"Ag Products Sold", unit:"county", value:"$612.3M", change:null,
+      asOf:"2022 Ag Census", cadence:"census", api:false, source:"USDA NASS", url:"https://www.nass.usda.gov/Publications/AgCensus/2022/Online_Resources/County_Profiles/Wisconsin/cp55039.pdf" },
+  ],
+  farmCards: [
+    { h:"Cropland values climbing fast", p:"Compeer Financial reports Fond du Lac County cropland values up <span class='k'>~12% in six months</span> and roughly <span class='k'>50% since 2022</span>, driven by tight inventory and dairy-expansion competition.",
+      url:"https://www.compeer.com/articles/cropland-dairy-property-value-trends-in-northeastern-wisconsin", cta:"Read the report" },
+  ],
+  demographics: [
+    { label:"Population", value:"104,669", change:{dir:"up",text:"vs 104,154 in 2020"},
+      asOf:"2025 est.", cadence:"annual", api:true, source:"U.S. Census", url:"https://www.census.gov/quickfacts/fact/table/fonddulaccountywisconsin" },
+    { label:"Median Household Income", value:"$74,275", change:null,
+      asOf:"2020&ndash;24 ACS", cadence:"census", api:true, source:"U.S. Census", url:"https://www.census.gov/quickfacts/fact/table/fonddulaccountywisconsin" },
+    { label:"Per Capita Income", value:"$39,105", change:null,
+      asOf:"2020&ndash;24 ACS", cadence:"census", api:true, source:"U.S. Census", url:"https://www.census.gov/quickfacts/fact/table/fonddulaccountywisconsin" },
+    { label:"Total Housing Units", value:"46,496", change:null,
+      asOf:"2025 est.", cadence:"annual", api:true, source:"U.S. Census", url:"https://www.census.gov/quickfacts/fact/table/fonddulaccountywisconsin" },
+    { label:"Persons per Household", value:"2.33", change:null,
+      asOf:"2020&ndash;24 ACS", cadence:"census", api:true, source:"U.S. Census", url:"https://www.census.gov/quickfacts/fact/table/fonddulaccountywisconsin" },
+    { label:"Bachelor's Degree +", unit:"age 25+", value:"22.3%", change:null,
+      asOf:"2020&ndash;24 ACS", cadence:"census", api:true, source:"U.S. Census", url:"https://www.census.gov/quickfacts/fact/table/fonddulaccountywisconsin" },
+  ],
+  news: [
+    { t:"Rueping Lofts to bring living &amp; commercial space downtown", s:"Spectrum News 1 &middot; 2026", u:"https://spectrumnews1.com/wi/milwaukee/news/2026/01/29/downtown-fond-du-lac-living", d:"A 150-year-old downtown building converts into seven residential lofts plus commercial space." },
+    { t:"Envision Greater Fond du Lac sets 2030 goals", s:"Insight on Business &middot; Nov 2025", u:"https://insightonbusiness.com/envision-greater-fond-du-lac-sets-2030-goals/", d:"The county's lead economic-development org lays out a new five-year strategic plan." },
+    { t:"Strategic efforts powering growth in Fond du Lac", s:"Business in Focus &middot; Jul 2025", u:"https://businessinfocusmagazine.com/2025/07/fueling-growth-in-fond-du-lac-how-strategic-efforts-are-powering-success/", d:"Overview of the pipeline, including the Gold Shovel Aeronautical Industrial Park." },
+    { t:"Cropland &amp; dairy property value trends, NE Wisconsin", s:"Compeer Financial &middot; Mar 2025", u:"https://www.compeer.com/articles/cropland-dairy-property-value-trends-in-northeastern-wisconsin", d:"Fond du Lac cropland up ~12% in six months and ~50% since 2022." },
+    { t:"$1.7M Main Street makeover in downtown Fond du Lac", s:"Spectrum News 1 &middot; May 2025", u:"https://spectrumnews1.com/wi/milwaukee/news/2025/05/08/main-street-makeover-fond-du-lac", d:"Public infrastructure investment supporting commercial-district revitalization." },
+    { t:"County transforms former UW&ndash;Fond du Lac campus", s:"Spectrum News 1 &middot; Feb 2025", u:"https://spectrumnews1.com/wi/milwaukee/news/2025/02/06/fond-du-lac-county-complex-transforms-campus", d:"Adaptive reuse of a closed college campus into a revenue-generating county complex." },
+    { t:"Wisconsin agricultural land prices 2025", s:"UW&ndash;Madison Extension &middot; 2025", u:"https://farms.extension.wisc.edu/articles/wisconsin-agricultural-land-prices/", d:"Statewide ag land $7,238/acre (+9.6%); East Central WI, incl. Fond du Lac, $8,599/acre." },
+    { t:"City of Fond du Lac publishes proposed 2026 budget", s:"KFIZ &middot; Sep 2025", u:"https://kfiz.com/city-of-fond-du-lac-publishes-its-proposed-2026-budget/", d:"~10% rise in equalized property values and first funding for N. Main St. redevelopment." },
+  ],
+  sources: [
+    "U.S. Census Bureau QuickFacts &amp; ACS 5-year &mdash; census.gov",
+    "Freddie Mac Primary Mortgage Market Survey &mdash; freddiemac.com/pmms",
+    "FRED / U.S. Treasury (DGS10) &mdash; fred.stlouisfed.org",
+    "Federal Reserve FOMC &mdash; federalreserve.gov",
+    "Redfin Data Center &mdash; redfin.com",
+    "Zillow Home Value Index &mdash; zillow.com",
+    "Wisconsin DWD / BLS LAUS &mdash; dwd.wisconsin.gov",
+    "USDA NASS Land Values &amp; 2022 Census of Agriculture &mdash; nass.usda.gov",
+    "UW&ndash;Madison Division of Extension &mdash; extension.wisc.edu",
+    "Envision Greater Fond du Lac &mdash; envisiongreaterfdl.com",
+    "HUD FHA Mortgage Limits &mdash; entp.hud.gov",
+    "Wisconsin REALTORS&reg; Association &mdash; wra.org",
+  ],
+  method: "Where a county-level figure isn't published (commercial sale prices, county-level mortgage or months-of-supply), a statewide or nearest-geography figure is shown and labeled as context. Housing value is reported two ways — Zillow's typical-value index (recent) and the Census median owner-occupied value (broader, lagging) — because they measure different things. Unemployment compares a not-seasonally-adjusted county rate with the statewide figure; treat small gaps as approximate. Farmland values come from three distinct series (NASS survey, Extension market sales, Census of Agriculture) that are not directly comparable and are labeled individually."
+};
+
+/* ====================== RENDER ====================== */
+var arrow = function(d){ return d==="up" ? "&#9650;" : d==="down" ? "&#9660;" : "&mdash;"; };
+function tile(m){
+  var chg = m.change ? '<div class="m-chg '+m.change.dir+'">'+arrow(m.change.dir)+' '+m.change.text+'</div>' : '';
+  var api = ''; /* per-tile API tag retired; whole page is refreshed on schedule */
+  var unit = m.unit ? ' <span class="m-unit">'+m.unit+'</span>' : '';
+  var idAttr = m.id==="treasury" ? ' id="tile-treasury"' : '';
+  var valId = m.id==="treasury" ? ' id="t10-val"' : '';
+  var asofId = m.id==="treasury" ? ' id="t10-asof"' : '';
+  return '<div class="m-tile reveal"'+idAttr+'>'+
+    '<div class="m-top"><span class="m-label">'+m.label+'</span><span class="m-badge '+m.cadence+'">'+m.cadence+'</span></div>'+
+    '<div class="m-val"'+valId+'>'+m.value+unit+'</div>'+
+    chg+
+    '<div class="m-meta"><span class="m-asof"'+asofId+'>'+m.asOf+'</span><span><a href="'+m.url+'" target="_blank" rel="noopener">'+m.source+'</a> '+api+'</span></div>'+
+  '</div>';
+}
+function put(id,html){ var el=document.getElementById(id); if(el) el.innerHTML=html; }
+
+put("grid-rates", DATA.rates.map(tile).join(""));
+put("grid-residential", DATA.residential.map(tile).join(""));
+put("grid-commercial", DATA.commercial.map(tile).join(""));
+put("grid-farm", DATA.farm.map(tile).join(""));
+put("grid-demographics", DATA.demographics.map(tile).join(""));
+
+put("cards-commercial", DATA.commercialCards.map(function(c){ return '<div class="m-note-card reveal"><h3>'+c.h+'</h3><p>'+c.p+'</p><a href="'+c.url+'" target="_blank" rel="noopener">'+c.cta+' &rarr;</a></div>'; }).join(""));
+put("cards-farm", DATA.farmCards.map(function(c){ return '<div class="m-note-card reveal"><h3>'+c.h+'</h3><p>'+c.p+'</p><a href="'+c.url+'" target="_blank" rel="noopener">'+c.cta+' &rarr;</a></div>'; }).join(""));
+put("chips-employers", DATA.employers.map(function(e){ return '<span>'+e+'</span>'; }).join(""));
+put("grid-news", DATA.news.map(function(n){ return '<div class="m-item reveal"><div class="m-src2">'+n.s+'</div><h3>'+n.t+'</h3><p>'+n.d+'</p><a class="go" href="'+n.u+'" target="_blank" rel="noopener">Read the story &rarr;</a></div>'; }).join(""));
+put("srclist", DATA.sources.map(function(s){ return '<p>'+s+'</p>'; }).join(""));
+var mEl=document.getElementById("method"); if(mEl) mEl.innerHTML=DATA.method;
+var uEl=document.getElementById("updated"); if(uEl) uEl.textContent=DATA.updated;
+
+/* ====================== SITE SCRIPTS (nav, reveal, menu) ====================== */
+var nav = document.getElementById('nav');
+function onScroll(){ if(window.scrollY > 24){ nav.classList.add('scrolled'); } else { nav.classList.remove('scrolled'); } }
+window.addEventListener('scroll', onScroll, {passive:true}); onScroll();
+
+var io = new IntersectionObserver(function(entries){
+  entries.forEach(function(e){ if(e.isIntersecting){ e.target.classList.add('in'); io.unobserve(e.target); } });
+}, {threshold:.12});
+document.querySelectorAll('.reveal').forEach(function(el){ io.observe(el); });
+
+var menuBtn = document.querySelector('.menu-btn');
+var navLinks = document.querySelector('nav.links');
+if(menuBtn && navLinks){
+  menuBtn.setAttribute('aria-expanded','false');
+  menuBtn.addEventListener('click', function(){
+    var open = navLinks.classList.toggle('open');
+    menuBtn.setAttribute('aria-expanded', open ? 'true' : 'false');
+    menuBtn.innerHTML = open ? '&times;' : '&#9776;';
+  });
+  navLinks.querySelectorAll('a').forEach(function(a){
+    a.addEventListener('click', function(){ navLinks.classList.remove('open'); menuBtn.setAttribute('aria-expanded','false'); menuBtn.innerHTML='&#9776;'; });
+  });
+}
+
+/* ====================== LIVE: 10-YEAR TREASURY (FRED, keyless, CORS-enabled) ======================
+   Fetches the DGS10 daily series and shows the latest published value. Runs on every page load,
+   so a visit at start of day / noon / end of day always shows the current figure. If the fetch
+   fails for any reason, the static value above remains — the page never breaks. */
+(function(){
+  function fmtDate(iso){
+    try{ var d=new Date(iso+'T00:00:00'); return d.toLocaleDateString('en-US',{year:'numeric',month:'short',day:'numeric'}); }
+    catch(e){ return iso; }
+  }
+  fetch('https://fred.stlouisfed.org/graph/fredgraph.csv?id=DGS10', {cache:'no-store'})
+    .then(function(r){ if(!r.ok) throw new Error('bad status'); return r.text(); })
+    .then(function(txt){
+      var rows = txt.trim().split('\n');
+      var val=null, date=null;
+      for(var i=rows.length-1;i>=1;i--){
+        var parts = rows[i].split(',');
+        var v = (parts[1]||'').trim();
+        if(v && v!=='.' && !isNaN(parseFloat(v))){ val=parseFloat(v); date=parts[0].trim(); break; }
+      }
+      if(val===null) return;
+      var valEl=document.getElementById('t10-val');
+      var asofEl=document.getElementById('t10-asof');
+      var liveEl=document.getElementById('t10-live');
+      if(valEl) valEl.innerHTML = val.toFixed(2)+'%';
+      if(asofEl) asofEl.textContent = fmtDate(date);
+      if(liveEl){ liveEl.style.display='inline-flex'; liveEl.title='Live from FRED · updated '+fmtDate(date); }
+    })
+    .catch(function(){ /* keep static fallback */ });
+})();
+</script>
+</body>
+</html>
