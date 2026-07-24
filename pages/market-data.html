@@ -120,6 +120,14 @@
 .m-item p{font-size:.9rem;color:#46555a;margin-bottom:1rem;}
 .m-item a.go{font-family:var(--mono);font-size:.7rem;letter-spacing:.08em;text-transform:uppercase;color:var(--teal);margin-top:auto;}
 .m-item a.go:hover{color:var(--brass-deep);}
+/* news sits in the dark band — match the note-card treatment so the headline
+   doesn't inherit .band-dark's paper color onto a white card */
+.band-dark .m-item{background:rgba(244,243,238,.04);border-color:var(--line-light);}
+.band-dark .m-item h3{color:var(--paper);}
+.band-dark .m-item p{color:#bcd0ce;}
+.band-dark .m-item .m-src2{color:#9db6b3;}
+.band-dark .m-item a.go{color:#d7c398;}
+.band-dark .m-item a.go:hover{color:var(--brass);}
 
 /* sources / method */
 .m-sources{max-width:var(--wrap);margin:0 auto;padding:0 28px;}
