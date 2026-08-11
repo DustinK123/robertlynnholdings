@@ -21,6 +21,20 @@
 <link href="https://fonts.googleapis.com/css2?family=Spectral:wght@300;400;500;600;700&family=Hanken+Grotesk:wght@400;500;600;700&family=IBM+Plex+Mono:wght@400;500;600&display=swap" rel="stylesheet" />
 <link rel="stylesheet" href="/css/styles.css" />
 
+<!-- Second Impressions listing enhancements -->
+<style>
+  .page-leasing .listing-cta{display:flex;flex-wrap:wrap;gap:12px;margin-top:auto;padding-top:4px;}
+  .page-leasing .listing-cta .btn{align-self:flex-start;margin-top:0;}
+  .page-leasing .flyer-note{font-family:var(--mono);font-size:.66rem;letter-spacing:.04em;color:#5c6f73;margin-top:12px;}
+  .si-gallery{max-width:var(--wrap);margin:30px auto 0;padding:0 6px;}
+  .si-gallery .sg-head{font-family:var(--mono);font-size:.7rem;letter-spacing:.14em;text-transform:uppercase;color:var(--teal);margin:0 6px 14px;}
+  .si-gallery .sg-grid{display:grid;grid-template-columns:repeat(4,1fr);gap:12px;}
+  .si-gallery figure{margin:0;border:1px solid var(--line);border-radius:3px;overflow:hidden;background:linear-gradient(150deg,#236270,#0e2a33);}
+  .si-gallery img{display:block;width:100%;height:210px;object-fit:cover;}
+  .si-gallery figcaption{font-family:var(--mono);font-size:.62rem;letter-spacing:.08em;text-transform:uppercase;color:var(--teal);padding:.6rem .7rem;background:var(--paper);}
+  @media(max-width:760px){.si-gallery .sg-grid{grid-template-columns:repeat(2,1fr);}}
+</style>
+
 <!-- Schema Markup -->
 <script type="application/ld+json">
 {
@@ -36,6 +50,14 @@
       "@type": "Offer",
       "name": "Anchor Retail Space — Harbor View Plaza",
       "availabilityStarts": "2027-01-01",
+      "priceSpecification": {
+        "@type": "UnitPriceSpecification",
+        "price": 7.00,
+        "priceCurrency": "USD",
+        "unitCode": "SQF",
+        "billingIncrement": 1,
+        "description": "Approx. $7.00/SF/YR — base rent plus estimated NNN; TI negotiable"
+      },
       "itemOffered": {
         "@type": "CommercialProperty",
         "name": "Harbor View Plaza — Anchor Retail Space",
@@ -113,31 +135,39 @@
   <!-- Anchor Retail -->
   <article class="listing reveal">
     <div class="listing-photo">
-      <img src="../images/harborview-plaza.jpg" alt="Anchor retail space for lease at Harbor View Plaza, Fond du Lac" />
+      <img src="../images/si-storefront.jpg" alt="Available anchor retail storefront for lease at Harbor View Plaza, 319–327 Winnebago Drive, Fond du Lac — blank signage panel ready for a new tenant" />
       <span class="listing-badge now">Now leasing &middot; Retail</span>
     </div>
     <div class="listing-body">
       <div class="listing-kicker">Harbor View Plaza &middot; Winnebago Drive</div>
       <h2>Anchor Retail Space</h2>
       <div class="listing-addr">319, 325 &amp; 327 Winnebago Dr, Fond du Lac, WI 54935</div>
-      <div class="fact-row"><span>Size</span><span>17,871 SF</span></div>
-      <div class="fact-row"><span>Type</span><span>Retail anchor</span></div>
+      <p style="font-size:.95rem;color:#46555a;margin:0 0 18px;">A rare large-format retail opportunity in Fond du Lac — 17,871 SF of open, divisible retail with abundant parking, drive-in loading and direct local ownership. Combine with the adjoining office for up to &plusmn;19,045 SF under one roof.</p>
+      <div class="fact-row"><span>Size</span><span>17,871 SF &middot; divisible</span></div>
+      <div class="fact-row"><span>Configurations</span><span>&plusmn;6,000 &amp; &plusmn;12,000 SF contemplated</span></div>
+      <div class="fact-row"><span>Clear height</span><span>14 ft</span></div>
+      <div class="fact-row"><span>Loading</span><span>2 rear drive-in doors (12&prime;&times;14&prime; &amp; 8&prime;&times;10&prime;)</span></div>
+      <div class="fact-row"><span>Traffic &amp; parking</span><span>&plusmn;8,200 vehicles/day &middot; 180+ spaces</span></div>
+      <div class="fact-row"><span>Lease rate</span><span>&plusmn;$7.00/SF/YR (base + est. NNN)</span></div>
       <div class="fact-row"><span>Availability</span><span class="avail">Available January 2027</span></div>
-      <p style="font-size:.95rem;color:#46555a;margin:16px 0 2px;">Prime Winnebago Drive frontage — 8,200 vehicles per day and 180+ shared parking spaces.</p>
       <div class="ideal">
         <span class="ideal-label">Ideal for</span>
         <div class="chips">
           <span class="chip">Retail</span>
           <span class="chip">Showroom</span>
-          <span class="chip">Discount retail</span>
-          <span class="chip">Fitness</span>
           <span class="chip">Furniture</span>
+          <span class="chip">Fitness</span>
           <span class="chip">Medical</span>
           <span class="chip">Nonprofit</span>
-          <span class="chip">Service use</span>
+          <span class="chip">Church</span>
+          <span class="chip">Service &amp; office</span>
         </div>
       </div>
-      <a class="btn btn-line" href="mailto:robert.lynn.holdings@gmail.com?subject=Inquiry%20-%20Harbor%20View%20Plaza%20Anchor%20Retail%20(17,871%20SF)">Inquire about this space <span class="arr">&rarr;</span></a>
+      <div class="listing-cta">
+        <a class="btn btn-primary" href="/downloads/Harbor-View-Plaza-Second-Impressions-Flyer.pdf" download>Download flyer (PDF) <span class="arr">&darr;</span></a>
+        <a class="btn btn-line" href="mailto:robert.lynn.holdings@gmail.com?subject=Inquiry%20-%20Harbor%20View%20Plaza%20Anchor%20Retail%20(17,871%20SF)">Inquire about this space <span class="arr">&rarr;</span></a>
+      </div>
+      <p class="flyer-note">TI negotiable &middot; contact ownership for configuration-specific pricing.</p>
     </div>
   </article>
 
@@ -153,7 +183,7 @@
       <div class="listing-addr">333 Winnebago Dr, Fond du Lac, WI 54935</div>
       <div class="fact-row"><span>Size</span><span>1,174 SF</span></div>
       <div class="fact-row"><span>Type</span><span>Standalone office</span></div>
-      <div class="fact-row"><span>Availability</span><span class="avail">Available / coming available</span></div>
+      <div class="fact-row"><span>Availability</span><span class="avail">Available January 2027</span></div>
       <div class="ideal">
         <span class="ideal-label">Ideal for</span>
         <div class="chips">
@@ -168,6 +198,29 @@
       <a class="btn btn-line" href="mailto:robert.lynn.holdings@gmail.com?subject=Inquiry%20-%20Harbor%20View%20Plaza%20Standalone%20Office%20(1,174%20SF)">Inquire about this space <span class="arr">&rarr;</span></a>
     </div>
   </article>
+
+  <!-- Photo gallery — anchor retail space -->
+  <div class="si-gallery reveal">
+    <p class="sg-head">Inside &amp; around the anchor space</p>
+    <div class="sg-grid">
+      <figure>
+        <img src="../images/si-storefront.jpg" alt="Storefront entrance of the available anchor retail space at Harbor View Plaza with Amazon Hub locker" loading="lazy" />
+        <figcaption>Storefront &amp; entrance</figcaption>
+      </figure>
+      <figure>
+        <img src="../images/si-interior-floor.jpg" alt="Open interior retail floor with wood flooring and checkout area inside the Harbor View Plaza anchor space" loading="lazy" />
+        <figcaption>Open retail floor</figcaption>
+      </figure>
+      <figure>
+        <img src="../images/si-interior-retail.jpg" alt="Interior retail sales floor with shelving and display space at Harbor View Plaza" loading="lazy" />
+        <figcaption>Flexible sales floor</figcaption>
+      </figure>
+      <figure>
+        <img src="../images/si-rear-loading.jpg" alt="Rear of the building showing drive-in loading doors and back parking at Harbor View Plaza" loading="lazy" />
+        <figcaption>Rear drive-in loading</figcaption>
+      </figure>
+    </div>
+  </div>
 
 </section>
 
