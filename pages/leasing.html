@@ -44,6 +44,7 @@
   .si-gallery .sg-head{font-family:var(--mono);font-size:.7rem;letter-spacing:.14em;text-transform:uppercase;color:var(--teal);margin:0 6px 14px;}
   .si-gallery .sg-grid{display:grid;grid-template-columns:repeat(4,1fr);gap:12px;}
   .si-gallery figure{margin:0;border:1px solid var(--line);border-radius:3px;overflow:hidden;background:linear-gradient(150deg,#236270,#0e2a33);}
+  .si-gallery a.sg-zoom{display:block;cursor:zoom-in;}
   .si-gallery img{display:block;width:100%;height:210px;object-fit:cover;}
   .si-gallery figcaption{font-family:var(--mono);font-size:.62rem;letter-spacing:.08em;text-transform:uppercase;color:var(--teal);padding:.6rem .7rem;background:var(--paper);}
   @media(max-width:760px){.si-gallery .sg-grid{grid-template-columns:repeat(2,1fr);}}
@@ -215,23 +216,55 @@
 
   <!-- Photo gallery — anchor retail space -->
   <div class="si-gallery reveal">
-    <p class="sg-head">Inside &amp; around the anchor space</p>
+    <p class="sg-head">Photos, site plan &amp; location</p>
     <div class="sg-grid">
       <figure>
-        <img src="../images/si-storefront.jpg" alt="Storefront entrance of the available anchor retail space at Harbor View Plaza with Amazon Hub locker" loading="lazy" />
+        <a class="sg-zoom" href="../images/si-storefront.jpg" target="_blank" rel="noopener">
+          <img src="../images/si-storefront.jpg" alt="Storefront entrance of the available anchor retail space at Harbor View Plaza with Amazon Hub locker" loading="lazy" />
+        </a>
         <figcaption>Storefront &amp; entrance</figcaption>
       </figure>
       <figure>
-        <img src="../images/si-interior-floor.jpg" alt="Open interior retail floor with wood flooring and checkout area inside the Harbor View Plaza anchor space" loading="lazy" />
+        <a class="sg-zoom" href="../images/si-interior-floor.jpg" target="_blank" rel="noopener">
+          <img src="../images/si-interior-floor.jpg" alt="Open interior retail floor with wood flooring and checkout area inside the Harbor View Plaza anchor space" loading="lazy" />
+        </a>
         <figcaption>Open retail floor</figcaption>
       </figure>
       <figure>
-        <img src="../images/si-interior-retail.jpg" alt="Interior retail sales floor with shelving and display space at Harbor View Plaza" loading="lazy" />
+        <a class="sg-zoom" href="../images/si-sales-floor.jpg" target="_blank" rel="noopener">
+          <img src="../images/si-sales-floor.jpg" alt="Retail sales floor with clothing racks and displays inside the Harbor View Plaza anchor space" loading="lazy" />
+        </a>
         <figcaption>Flexible sales floor</figcaption>
       </figure>
       <figure>
-        <img src="../images/si-rear-loading.jpg" alt="Rear of the building showing drive-in loading doors and back parking at Harbor View Plaza" loading="lazy" />
+        <a class="sg-zoom" href="../images/si-rear-loading.jpg" target="_blank" rel="noopener">
+          <img src="../images/si-rear-loading.jpg" alt="Rear of the building showing drive-in loading doors and back parking at Harbor View Plaza" loading="lazy" />
+        </a>
         <figcaption>Rear drive-in loading</figcaption>
+      </figure>
+      <figure>
+        <a class="sg-zoom" href="../images/si-frontage.jpg" target="_blank" rel="noopener">
+          <img src="../images/si-frontage.jpg" alt="Full Winnebago Drive storefront frontage of Harbor View Plaza with tenant signage panels" loading="lazy" />
+        </a>
+        <figcaption>Winnebago Drive frontage</figcaption>
+      </figure>
+      <figure>
+        <a class="sg-zoom" href="../images/si-monument-sign.jpg" target="_blank" rel="noopener">
+          <img src="../images/si-monument-sign.jpg" alt="Harbor View Plaza monument pylon sign on Winnebago Drive with tenant signage space" loading="lazy" />
+        </a>
+        <figcaption>Monument signage</figcaption>
+      </figure>
+      <figure>
+        <a class="sg-zoom" href="../images/si-siteplan.jpg" target="_blank" rel="noopener">
+          <img src="../images/si-siteplan.jpg" alt="Site plan aerial showing the available 17,871 SF retail and 1,174 SF office outlined at Harbor View Plaza" loading="lazy" />
+        </a>
+        <figcaption>Site plan &middot; available space</figcaption>
+      </figure>
+      <figure>
+        <a class="sg-zoom" href="../images/si-regional.jpg" target="_blank" rel="noopener">
+          <img src="../images/si-regional.jpg" alt="Regional aerial map showing Harbor View Plaza near Lake Winnebago, I-41 and Fond du Lac retail and employers" loading="lazy" />
+        </a>
+        <figcaption>Regional location</figcaption>
       </figure>
     </div>
   </div>
