@@ -40,6 +40,10 @@
   .page-leasing .listing-cta{display:flex;flex-wrap:wrap;gap:12px;margin-top:auto;padding-top:4px;}
   .page-leasing .listing-cta .btn{align-self:flex-start;margin-top:0;}
   .page-leasing .flyer-note{font-family:var(--mono);font-size:.66rem;letter-spacing:.04em;color:#5c6f73;margin-top:12px;}
+  .page-leasing .listing-cta button.btn{line-height:1.6;-webkit-appearance:none;appearance:none;}
+  .page-leasing .flyer-status{font-family:var(--mono);font-size:.68rem;line-height:1.55;letter-spacing:.03em;color:#8a5a12;
+    background:rgba(194,145,62,.1);border:1px solid rgba(194,145,62,.45);border-radius:3px;padding:.6rem .75rem;margin:12px 0 0;max-width:46ch;}
+  .page-leasing .flyer-status[hidden]{display:none;}
   .si-gallery{max-width:var(--wrap);margin:30px auto 0;padding:0 6px;}
   .si-gallery .sg-head{font-family:var(--mono);font-size:.7rem;letter-spacing:.14em;text-transform:uppercase;color:var(--teal);margin:0 6px 14px;}
   .si-gallery .sg-grid{display:grid;grid-template-columns:repeat(4,1fr);gap:12px;}
@@ -67,14 +71,7 @@
       "@type": "Offer",
       "name": "Anchor Commercial Space — Harbor View Plaza",
       "availabilityStarts": "2027-01-01",
-      "priceSpecification": {
-        "@type": "UnitPriceSpecification",
-        "price": 7.00,
-        "priceCurrency": "USD",
-        "unitCode": "SQF",
-        "billingIncrement": 1,
-        "description": "Approx. $7.00/SF/YR — base rent plus estimated NNN; TI negotiable"
-      },
+      "description": "Lease rate undisclosed — contact ownership for rate and terms. NNN lease; TI negotiable.",
       "itemOffered": {
         "@type": "CommercialProperty",
         "name": "Harbor View Plaza — Anchor Commercial Space",
@@ -165,7 +162,7 @@
       <div class="fact-row"><span>Clear height</span><span>14 ft</span></div>
       <div class="fact-row"><span>Loading</span><span>2 rear drive-in doors (12&prime;&times;14&prime; &amp; 8&prime;&times;10&prime;)</span></div>
       <div class="fact-row"><span>Traffic &amp; parking</span><span>&plusmn;8,200 vehicles/day &middot; 180+ spaces</span></div>
-      <div class="fact-row"><span>Lease rate</span><span>&plusmn;$7.00/SF/YR (base + est. NNN)</span></div>
+      <div class="fact-row"><span>Lease rate</span><span>Undisclosed rate</span></div>
       <div class="fact-row"><span>Lease type</span><span>NNN &middot; landlord covers roof, structure &amp; HVAC</span></div>
       <div class="fact-row"><span>Availability</span><span class="avail">Available January 2027</span></div>
       <div class="ideal">
@@ -182,11 +179,12 @@
         </div>
       </div>
       <div class="listing-cta">
-        <a class="btn btn-primary" href="/downloads/Harbor-View-Plaza-Second-Impressions-Flyer.pdf?v=35" download>Download flyer (PDF) <span class="arr">&darr;</span></a>
+        <button type="button" class="btn btn-primary" id="flyer-btn" aria-controls="flyer-status">Download flyer (PDF) <span class="arr">&darr;</span></button>
         <a class="btn btn-line" href="mailto:robert.lynn.holdings@gmail.com?subject=Inquiry%20-%20Harbor%20View%20Plaza%20Anchor%20Commercial%20(17,871%20SF)">Inquire about this space <span class="arr">&rarr;</span></a>
         <a class="btn btn-line" href="https://www.crexi.com/lease/properties/1233034/wisconsin-harbor-view-plaza" target="_blank" rel="noopener">View on Crexi <span class="arr">&rarr;</span></a>
       </div>
-      <p class="flyer-note">TI negotiable &middot; contact ownership for configuration-specific pricing.</p>
+      <p class="flyer-status" id="flyer-status" role="status" hidden>Flyer under construction &mdash; an updated brochure is being prepared and isn&rsquo;t available for download yet. Contact ownership in the meantime.</p>
+      <p class="flyer-note">TI negotiable &middot; contact ownership for configuration-specific rates and terms.</p>
     </div>
   </article>
 
@@ -437,6 +435,15 @@
         menuBtn.setAttribute('aria-expanded','false');
         menuBtn.innerHTML = '&#9776;';
       });
+    });
+  }
+
+  // flyer download is intentionally disabled while the brochure is rebuilt
+  var flyerBtn = document.getElementById('flyer-btn');
+  var flyerStatus = document.getElementById('flyer-status');
+  if(flyerBtn && flyerStatus){
+    flyerBtn.addEventListener('click', function(){
+      flyerStatus.hidden = false;
     });
   }
 </script>
